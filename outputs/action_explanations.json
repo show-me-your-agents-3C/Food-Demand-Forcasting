@@ -1,0 +1,242 @@
+[
+  {
+    "store_nbr": 3,
+    "family": "BEVERAGES",
+    "action": "order_today",
+    "recommended_order_qty": 44120,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 51433 over the next 7 days (7348/day). Simulated current stock is 11021, versus a reorder point of 25732; supplier lead time is 3 day(s).",
+    "tradeoff": "Shelf-life scenario: 180 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 2,
+    "family": "BEVERAGES",
+    "action": "order_today",
+    "recommended_order_qty": 15340,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 17898 over the next 7 days (2557/day). Simulated current stock is 3835, versus a reorder point of 8929; supplier lead time is 3 day(s).",
+    "tradeoff": "Shelf-life scenario: 180 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 1,
+    "family": "PRODUCE",
+    "action": "order_today",
+    "recommended_order_qty": 6370,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 14834 over the next 7 days (2119/day). Simulated current stock is 3179, versus a reorder point of 3183; supplier lead time is 1 day(s).",
+    "tradeoff": "Shelf-life scenario: 4 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 3,
+    "family": "DAIRY",
+    "action": "order_today",
+    "recommended_order_qty": 11260,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 13640 over the next 7 days (1949/day). Simulated current stock is 2923, versus a reorder point of 4424; supplier lead time is 2 day(s).",
+    "tradeoff": "Shelf-life scenario: 7 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 1,
+    "family": "BEVERAGES",
+    "action": "order_today",
+    "recommended_order_qty": 10880,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 12299 over the next 7 days (1757/day). Simulated current stock is 2636, versus a reorder point of 6470; supplier lead time is 3 day(s).",
+    "tradeoff": "Shelf-life scenario: 180 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 3,
+    "family": "POULTRY",
+    "action": "order_today",
+    "recommended_order_qty": 4240,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 7674 over the next 7 days (1096/day). Simulated current stock is 1644, versus a reorder point of 2588; supplier lead time is 2 day(s).",
+    "tradeoff": "Shelf-life scenario: 5 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 2,
+    "family": "DAIRY",
+    "action": "order_today",
+    "recommended_order_qty": 4300,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 5180 over the next 7 days (740/day). Simulated current stock is 1110, versus a reorder point of 1708; supplier lead time is 2 day(s).",
+    "tradeoff": "Shelf-life scenario: 7 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 3,
+    "family": "MEATS",
+    "action": "order_today",
+    "recommended_order_qty": 3750,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 5128 over the next 7 days (733/day). Simulated current stock is 1099, versus a reorder point of 1915; supplier lead time is 2 day(s).",
+    "tradeoff": "Shelf-life scenario: 6 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 1,
+    "family": "DAIRY",
+    "action": "order_today",
+    "recommended_order_qty": 3420,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 3961 over the next 7 days (566/day). Simulated current stock is 849, versus a reorder point of 1436; supplier lead time is 2 day(s).",
+    "tradeoff": "Shelf-life scenario: 7 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 2,
+    "family": "MEATS",
+    "action": "order_today",
+    "recommended_order_qty": 2980,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 3685 over the next 7 days (526/day). Simulated current stock is 790, versus a reorder point of 1659; supplier lead time is 2 day(s).",
+    "tradeoff": "Shelf-life scenario: 6 day(s). Waste risk is high.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 2,
+    "family": "POULTRY",
+    "action": "order_today",
+    "recommended_order_qty": 1650,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 2948 over the next 7 days (421/day). Simulated current stock is 632, versus a reorder point of 1012; supplier lead time is 2 day(s).",
+    "tradeoff": "Shelf-life scenario: 5 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 3,
+    "family": "FROZEN FOODS",
+    "action": "order_today",
+    "recommended_order_qty": 1940,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 2250 over the next 7 days (321/day). Simulated current stock is 482, versus a reorder point of 1132; supplier lead time is 3 day(s).",
+    "tradeoff": "Shelf-life scenario: 90 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 1,
+    "family": "MEATS",
+    "action": "order_today",
+    "recommended_order_qty": 1420,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 1770 over the next 7 days (253/day). Simulated current stock is 379, versus a reorder point of 778; supplier lead time is 2 day(s).",
+    "tradeoff": "Shelf-life scenario: 6 day(s). Waste risk is high.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 1,
+    "family": "POULTRY",
+    "action": "order_today",
+    "recommended_order_qty": 1030,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 1656 over the next 7 days (237/day). Simulated current stock is 355, versus a reorder point of 667; supplier lead time is 2 day(s).",
+    "tradeoff": "Shelf-life scenario: 5 day(s). Waste risk is high.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 1,
+    "family": "FROZEN FOODS",
+    "action": "order_today",
+    "recommended_order_qty": 680,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 740 over the next 7 days (106/day). Simulated current stock is 159, versus a reorder point of 408; supplier lead time is 3 day(s).",
+    "tradeoff": "Shelf-life scenario: 90 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 2,
+    "family": "FROZEN FOODS",
+    "action": "order_today",
+    "recommended_order_qty": 640,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 708 over the next 7 days (101/day). Simulated current stock is 152, versus a reorder point of 373; supplier lead time is 3 day(s).",
+    "tradeoff": "Shelf-life scenario: 90 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 3,
+    "family": "SEAFOOD",
+    "action": "order_today",
+    "recommended_order_qty": 150,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 549 over the next 7 days (78/day). Simulated current stock is 118, versus a reorder point of 189; supplier lead time is 2 day(s).",
+    "tradeoff": "Shelf-life scenario: 3 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 2,
+    "family": "SEAFOOD",
+    "action": "order_today",
+    "recommended_order_qty": 70,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 228 over the next 7 days (33/day). Simulated current stock is 49, versus a reorder point of 81; supplier lead time is 2 day(s).",
+    "tradeoff": "Shelf-life scenario: 3 day(s). Waste risk is high.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 1,
+    "family": "SEAFOOD",
+    "action": "order_today",
+    "recommended_order_qty": 60,
+    "summary": "Place an order today",
+    "reason": "Forecast demand is 148 over the next 7 days (21/day). Simulated current stock is 32, versus a reorder point of 66; supplier lead time is 2 day(s).",
+    "tradeoff": "Shelf-life scenario: 3 day(s). Waste risk is high.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 3,
+    "family": "PRODUCE",
+    "action": "monitor",
+    "recommended_order_qty": 20640,
+    "summary": "Monitor inventory",
+    "reason": "Forecast demand is 52553 over the next 7 days (7508/day). Simulated current stock is 11261, versus a reorder point of 9370; supplier lead time is 1 day(s).",
+    "tradeoff": "Shelf-life scenario: 4 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 2,
+    "family": "PRODUCE",
+    "action": "monitor",
+    "recommended_order_qty": 6070,
+    "summary": "Monitor inventory",
+    "reason": "Forecast demand is 15275 over the next 7 days (2182/day). Simulated current stock is 3273, versus a reorder point of 2790; supplier lead time is 1 day(s).",
+    "tradeoff": "Shelf-life scenario: 4 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 3,
+    "family": "BREAD/BAKERY",
+    "action": "monitor",
+    "recommended_order_qty": 1850,
+    "summary": "Monitor inventory",
+    "reason": "Forecast demand is 7839 over the next 7 days (1120/day). Simulated current stock is 1680, versus a reorder point of 1288; supplier lead time is 1 day(s).",
+    "tradeoff": "Shelf-life scenario: 3 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 2,
+    "family": "BREAD/BAKERY",
+    "action": "monitor",
+    "recommended_order_qty": 1000,
+    "summary": "Monitor inventory",
+    "reason": "Forecast demand is 4183 over the next 7 days (598/day). Simulated current stock is 896, versus a reorder point of 696; supplier lead time is 1 day(s).",
+    "tradeoff": "Shelf-life scenario: 3 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  },
+  {
+    "store_nbr": 1,
+    "family": "BREAD/BAKERY",
+    "action": "monitor",
+    "recommended_order_qty": 560,
+    "summary": "Monitor inventory",
+    "reason": "Forecast demand is 2018 over the next 7 days (288/day). Simulated current stock is 432, versus a reorder point of 407; supplier lead time is 1 day(s).",
+    "tradeoff": "Shelf-life scenario: 3 day(s). Waste risk is low.",
+    "evidence_boundary": "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+  }
+]

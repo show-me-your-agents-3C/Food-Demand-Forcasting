@@ -1,0 +1,26 @@
+{
+  "stores": {
+    "input_rows": 54,
+    "output_rows": 54,
+    "deleted_rows": 0
+  },
+  "holidays": {
+    "input_rows": 350,
+    "cleaned_rows": 350,
+    "feature_dates": 312,
+    "deleted_rows": 0
+  },
+  "oil": {
+    "input_rows": 1218,
+    "input_missing_values": 43,
+    "output_daily_rows": 1704,
+    "deleted_rows": 0,
+    "note": "Missing calendar dates and observed nulls are forward/back-filled in a derived historical series."
+  },
+  "transactions": {
+    "input_rows": 83488,
+    "output_rows": 83488,
+    "deleted_rows": 0,
+    "note": "Preserved for analysis only; do not use same-day transactions as a future forecasting feature."
+  }
+}

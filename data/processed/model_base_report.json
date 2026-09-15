@@ -1,0 +1,9 @@
+{
+  "input_food_rows": 1182168,
+  "output_rows": 1182168,
+  "deleted_rows": 0,
+  "quality_deletion_rate": 0.0,
+  "unmatched_store_rows": 0,
+  "rows_with_holiday_event": 176904,
+  "rule": "A missing holiday entry means no listed event and is filled with false/0; no sales row is removed."
+}

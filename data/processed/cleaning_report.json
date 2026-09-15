@@ -1,0 +1,11 @@
+{
+  "raw_rows": 3000888,
+  "cleaned_all_rows": 3000888,
+  "quality_deleted_rows": 0,
+  "quality_deletion_rate": 0.0,
+  "food_view_rows": 1182168,
+  "food_view_retention_rate": 0.393939,
+  "nonfood_scope_excluded_rows": 1818720,
+  "raw_source": "/home/ubuntu/demand-forecasting/data/favorita/train.csv",
+  "rule": "All valid raw rows are retained in cleaned_sales_all.csv; cleaned_food_sales.csv is a non-destructive business-scope view."
+}

@@ -1,0 +1,1001 @@
+id,date,store_nbr,family,sales,onpromotion,is_food,city,state,type,cluster,holiday_event_count,has_transferred_holiday,is_national_holiday,is_national_event,day_of_week,month,is_weekend
+3,2013-01-01,1,BEVERAGES,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+5,2013-01-01,1,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+8,2013-01-01,1,DAIRY,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+9,2013-01-01,1,DELI,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+10,2013-01-01,1,EGGS,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+11,2013-01-01,1,FROZEN FOODS,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+12,2013-01-01,1,GROCERY I,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+13,2013-01-01,1,GROCERY II,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+24,2013-01-01,1,MEATS,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+28,2013-01-01,1,POULTRY,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+29,2013-01-01,1,PREPARED FOODS,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+30,2013-01-01,1,PRODUCE,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+32,2013-01-01,1,SEAFOOD,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+36,2013-01-01,10,BEVERAGES,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+38,2013-01-01,10,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+41,2013-01-01,10,DAIRY,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+42,2013-01-01,10,DELI,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+43,2013-01-01,10,EGGS,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+44,2013-01-01,10,FROZEN FOODS,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+45,2013-01-01,10,GROCERY I,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+46,2013-01-01,10,GROCERY II,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+57,2013-01-01,10,MEATS,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+61,2013-01-01,10,POULTRY,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+62,2013-01-01,10,PREPARED FOODS,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+63,2013-01-01,10,PRODUCE,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+65,2013-01-01,10,SEAFOOD,0.0,False,True,Quito,Pichincha,C,15,1,False,True,False,1,1,False
+69,2013-01-01,11,BEVERAGES,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+71,2013-01-01,11,BREAD/BAKERY,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+74,2013-01-01,11,DAIRY,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+75,2013-01-01,11,DELI,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+76,2013-01-01,11,EGGS,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+77,2013-01-01,11,FROZEN FOODS,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+78,2013-01-01,11,GROCERY I,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+79,2013-01-01,11,GROCERY II,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+90,2013-01-01,11,MEATS,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+94,2013-01-01,11,POULTRY,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+95,2013-01-01,11,PREPARED FOODS,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+96,2013-01-01,11,PRODUCE,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+98,2013-01-01,11,SEAFOOD,0.0,False,True,Cayambe,Pichincha,B,6,1,False,True,False,1,1,False
+102,2013-01-01,12,BEVERAGES,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+104,2013-01-01,12,BREAD/BAKERY,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+107,2013-01-01,12,DAIRY,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+108,2013-01-01,12,DELI,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+109,2013-01-01,12,EGGS,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+110,2013-01-01,12,FROZEN FOODS,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+111,2013-01-01,12,GROCERY I,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+112,2013-01-01,12,GROCERY II,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+123,2013-01-01,12,MEATS,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+127,2013-01-01,12,POULTRY,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+128,2013-01-01,12,PREPARED FOODS,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+129,2013-01-01,12,PRODUCE,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+131,2013-01-01,12,SEAFOOD,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+135,2013-01-01,13,BEVERAGES,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+137,2013-01-01,13,BREAD/BAKERY,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+140,2013-01-01,13,DAIRY,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+141,2013-01-01,13,DELI,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+142,2013-01-01,13,EGGS,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+143,2013-01-01,13,FROZEN FOODS,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+144,2013-01-01,13,GROCERY I,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+145,2013-01-01,13,GROCERY II,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+156,2013-01-01,13,MEATS,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+160,2013-01-01,13,POULTRY,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+161,2013-01-01,13,PREPARED FOODS,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+162,2013-01-01,13,PRODUCE,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+164,2013-01-01,13,SEAFOOD,0.0,False,True,Latacunga,Cotopaxi,C,15,1,False,True,False,1,1,False
+168,2013-01-01,14,BEVERAGES,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+170,2013-01-01,14,BREAD/BAKERY,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+173,2013-01-01,14,DAIRY,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+174,2013-01-01,14,DELI,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+175,2013-01-01,14,EGGS,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+176,2013-01-01,14,FROZEN FOODS,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+177,2013-01-01,14,GROCERY I,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+178,2013-01-01,14,GROCERY II,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+189,2013-01-01,14,MEATS,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+193,2013-01-01,14,POULTRY,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+194,2013-01-01,14,PREPARED FOODS,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+195,2013-01-01,14,PRODUCE,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+197,2013-01-01,14,SEAFOOD,0.0,False,True,Riobamba,Chimborazo,C,7,1,False,True,False,1,1,False
+201,2013-01-01,15,BEVERAGES,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+203,2013-01-01,15,BREAD/BAKERY,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+206,2013-01-01,15,DAIRY,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+207,2013-01-01,15,DELI,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+208,2013-01-01,15,EGGS,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+209,2013-01-01,15,FROZEN FOODS,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+210,2013-01-01,15,GROCERY I,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+211,2013-01-01,15,GROCERY II,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+222,2013-01-01,15,MEATS,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+226,2013-01-01,15,POULTRY,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+227,2013-01-01,15,PREPARED FOODS,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+228,2013-01-01,15,PRODUCE,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+230,2013-01-01,15,SEAFOOD,0.0,False,True,Ibarra,Imbabura,C,15,1,False,True,False,1,1,False
+234,2013-01-01,16,BEVERAGES,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+236,2013-01-01,16,BREAD/BAKERY,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+239,2013-01-01,16,DAIRY,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+240,2013-01-01,16,DELI,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+241,2013-01-01,16,EGGS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+242,2013-01-01,16,FROZEN FOODS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+243,2013-01-01,16,GROCERY I,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+244,2013-01-01,16,GROCERY II,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+255,2013-01-01,16,MEATS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+259,2013-01-01,16,POULTRY,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+260,2013-01-01,16,PREPARED FOODS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+261,2013-01-01,16,PRODUCE,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+263,2013-01-01,16,SEAFOOD,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,1,False,True,False,1,1,False
+267,2013-01-01,17,BEVERAGES,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+269,2013-01-01,17,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+272,2013-01-01,17,DAIRY,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+273,2013-01-01,17,DELI,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+274,2013-01-01,17,EGGS,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+275,2013-01-01,17,FROZEN FOODS,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+276,2013-01-01,17,GROCERY I,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+277,2013-01-01,17,GROCERY II,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+288,2013-01-01,17,MEATS,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+292,2013-01-01,17,POULTRY,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+293,2013-01-01,17,PREPARED FOODS,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+294,2013-01-01,17,PRODUCE,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+296,2013-01-01,17,SEAFOOD,0.0,False,True,Quito,Pichincha,C,12,1,False,True,False,1,1,False
+300,2013-01-01,18,BEVERAGES,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+302,2013-01-01,18,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+305,2013-01-01,18,DAIRY,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+306,2013-01-01,18,DELI,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+307,2013-01-01,18,EGGS,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+308,2013-01-01,18,FROZEN FOODS,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+309,2013-01-01,18,GROCERY I,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+310,2013-01-01,18,GROCERY II,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+321,2013-01-01,18,MEATS,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+325,2013-01-01,18,POULTRY,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+326,2013-01-01,18,PREPARED FOODS,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+327,2013-01-01,18,PRODUCE,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+329,2013-01-01,18,SEAFOOD,0.0,False,True,Quito,Pichincha,B,16,1,False,True,False,1,1,False
+333,2013-01-01,19,BEVERAGES,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+335,2013-01-01,19,BREAD/BAKERY,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+338,2013-01-01,19,DAIRY,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+339,2013-01-01,19,DELI,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+340,2013-01-01,19,EGGS,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+341,2013-01-01,19,FROZEN FOODS,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+342,2013-01-01,19,GROCERY I,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+343,2013-01-01,19,GROCERY II,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+354,2013-01-01,19,MEATS,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+358,2013-01-01,19,POULTRY,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+359,2013-01-01,19,PREPARED FOODS,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+360,2013-01-01,19,PRODUCE,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+362,2013-01-01,19,SEAFOOD,0.0,False,True,Guaranda,Bolivar,C,15,1,False,True,False,1,1,False
+366,2013-01-01,2,BEVERAGES,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+368,2013-01-01,2,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+371,2013-01-01,2,DAIRY,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+372,2013-01-01,2,DELI,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+373,2013-01-01,2,EGGS,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+374,2013-01-01,2,FROZEN FOODS,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+375,2013-01-01,2,GROCERY I,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+376,2013-01-01,2,GROCERY II,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+387,2013-01-01,2,MEATS,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+391,2013-01-01,2,POULTRY,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+392,2013-01-01,2,PREPARED FOODS,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+393,2013-01-01,2,PRODUCE,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+395,2013-01-01,2,SEAFOOD,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+399,2013-01-01,20,BEVERAGES,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+401,2013-01-01,20,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+404,2013-01-01,20,DAIRY,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+405,2013-01-01,20,DELI,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+406,2013-01-01,20,EGGS,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+407,2013-01-01,20,FROZEN FOODS,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+408,2013-01-01,20,GROCERY I,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+409,2013-01-01,20,GROCERY II,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+420,2013-01-01,20,MEATS,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+424,2013-01-01,20,POULTRY,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+425,2013-01-01,20,PREPARED FOODS,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+426,2013-01-01,20,PRODUCE,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+428,2013-01-01,20,SEAFOOD,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+432,2013-01-01,21,BEVERAGES,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+434,2013-01-01,21,BREAD/BAKERY,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+437,2013-01-01,21,DAIRY,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+438,2013-01-01,21,DELI,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+439,2013-01-01,21,EGGS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+440,2013-01-01,21,FROZEN FOODS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+441,2013-01-01,21,GROCERY I,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+442,2013-01-01,21,GROCERY II,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+453,2013-01-01,21,MEATS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+457,2013-01-01,21,POULTRY,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+458,2013-01-01,21,PREPARED FOODS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+459,2013-01-01,21,PRODUCE,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+461,2013-01-01,21,SEAFOOD,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,1,False,True,False,1,1,False
+465,2013-01-01,22,BEVERAGES,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+467,2013-01-01,22,BREAD/BAKERY,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+470,2013-01-01,22,DAIRY,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+471,2013-01-01,22,DELI,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+472,2013-01-01,22,EGGS,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+473,2013-01-01,22,FROZEN FOODS,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+474,2013-01-01,22,GROCERY I,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+475,2013-01-01,22,GROCERY II,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+486,2013-01-01,22,MEATS,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+490,2013-01-01,22,POULTRY,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+491,2013-01-01,22,PREPARED FOODS,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+492,2013-01-01,22,PRODUCE,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+494,2013-01-01,22,SEAFOOD,0.0,False,True,Puyo,Pastaza,C,7,1,False,True,False,1,1,False
+498,2013-01-01,23,BEVERAGES,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+500,2013-01-01,23,BREAD/BAKERY,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+503,2013-01-01,23,DAIRY,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+504,2013-01-01,23,DELI,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+505,2013-01-01,23,EGGS,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+506,2013-01-01,23,FROZEN FOODS,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+507,2013-01-01,23,GROCERY I,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+508,2013-01-01,23,GROCERY II,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+519,2013-01-01,23,MEATS,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+523,2013-01-01,23,POULTRY,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+524,2013-01-01,23,PREPARED FOODS,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+525,2013-01-01,23,PRODUCE,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+527,2013-01-01,23,SEAFOOD,0.0,False,True,Ambato,Tungurahua,D,9,1,False,True,False,1,1,False
+531,2013-01-01,24,BEVERAGES,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+533,2013-01-01,24,BREAD/BAKERY,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+536,2013-01-01,24,DAIRY,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+537,2013-01-01,24,DELI,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+538,2013-01-01,24,EGGS,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+539,2013-01-01,24,FROZEN FOODS,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+540,2013-01-01,24,GROCERY I,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+541,2013-01-01,24,GROCERY II,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+552,2013-01-01,24,MEATS,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+556,2013-01-01,24,POULTRY,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+557,2013-01-01,24,PREPARED FOODS,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+558,2013-01-01,24,PRODUCE,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+560,2013-01-01,24,SEAFOOD,0.0,False,True,Guayaquil,Guayas,D,1,1,False,True,False,1,1,False
+564,2013-01-01,25,BEVERAGES,810.0,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+566,2013-01-01,25,BREAD/BAKERY,180.589,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+569,2013-01-01,25,DAIRY,143.0,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+570,2013-01-01,25,DELI,71.09,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+571,2013-01-01,25,EGGS,46.0,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+572,2013-01-01,25,FROZEN FOODS,29.654999,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+573,2013-01-01,25,GROCERY I,700.0,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+574,2013-01-01,25,GROCERY II,15.0,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+585,2013-01-01,25,MEATS,110.801,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+589,2013-01-01,25,POULTRY,42.637,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+590,2013-01-01,25,PREPARED FOODS,37.847,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+591,2013-01-01,25,PRODUCE,0.0,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+593,2013-01-01,25,SEAFOOD,0.0,False,True,Salinas,Santa Elena,D,1,1,False,True,False,1,1,False
+597,2013-01-01,26,BEVERAGES,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+599,2013-01-01,26,BREAD/BAKERY,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+602,2013-01-01,26,DAIRY,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+603,2013-01-01,26,DELI,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+604,2013-01-01,26,EGGS,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+605,2013-01-01,26,FROZEN FOODS,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+606,2013-01-01,26,GROCERY I,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+607,2013-01-01,26,GROCERY II,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+618,2013-01-01,26,MEATS,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+622,2013-01-01,26,POULTRY,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+623,2013-01-01,26,PREPARED FOODS,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+624,2013-01-01,26,PRODUCE,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+626,2013-01-01,26,SEAFOOD,0.0,False,True,Guayaquil,Guayas,D,10,1,False,True,False,1,1,False
+630,2013-01-01,27,BEVERAGES,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+632,2013-01-01,27,BREAD/BAKERY,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+635,2013-01-01,27,DAIRY,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+636,2013-01-01,27,DELI,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+637,2013-01-01,27,EGGS,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+638,2013-01-01,27,FROZEN FOODS,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+639,2013-01-01,27,GROCERY I,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+640,2013-01-01,27,GROCERY II,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+651,2013-01-01,27,MEATS,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+655,2013-01-01,27,POULTRY,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+656,2013-01-01,27,PREPARED FOODS,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+657,2013-01-01,27,PRODUCE,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+659,2013-01-01,27,SEAFOOD,0.0,False,True,Daule,Guayas,D,1,1,False,True,False,1,1,False
+663,2013-01-01,28,BEVERAGES,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+665,2013-01-01,28,BREAD/BAKERY,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+668,2013-01-01,28,DAIRY,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+669,2013-01-01,28,DELI,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+670,2013-01-01,28,EGGS,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+671,2013-01-01,28,FROZEN FOODS,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+672,2013-01-01,28,GROCERY I,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+673,2013-01-01,28,GROCERY II,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+684,2013-01-01,28,MEATS,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+688,2013-01-01,28,POULTRY,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+689,2013-01-01,28,PREPARED FOODS,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+690,2013-01-01,28,PRODUCE,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+692,2013-01-01,28,SEAFOOD,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+696,2013-01-01,29,BEVERAGES,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+698,2013-01-01,29,BREAD/BAKERY,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+701,2013-01-01,29,DAIRY,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+702,2013-01-01,29,DELI,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+703,2013-01-01,29,EGGS,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+704,2013-01-01,29,FROZEN FOODS,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+705,2013-01-01,29,GROCERY I,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+706,2013-01-01,29,GROCERY II,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+717,2013-01-01,29,MEATS,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+721,2013-01-01,29,POULTRY,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+722,2013-01-01,29,PREPARED FOODS,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+723,2013-01-01,29,PRODUCE,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+725,2013-01-01,29,SEAFOOD,0.0,False,True,Guayaquil,Guayas,E,10,1,False,True,False,1,1,False
+729,2013-01-01,3,BEVERAGES,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+731,2013-01-01,3,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+734,2013-01-01,3,DAIRY,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+735,2013-01-01,3,DELI,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+736,2013-01-01,3,EGGS,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+737,2013-01-01,3,FROZEN FOODS,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+738,2013-01-01,3,GROCERY I,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+739,2013-01-01,3,GROCERY II,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+750,2013-01-01,3,MEATS,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+754,2013-01-01,3,POULTRY,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+755,2013-01-01,3,PREPARED FOODS,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+756,2013-01-01,3,PRODUCE,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+758,2013-01-01,3,SEAFOOD,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+762,2013-01-01,30,BEVERAGES,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+764,2013-01-01,30,BREAD/BAKERY,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+767,2013-01-01,30,DAIRY,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+768,2013-01-01,30,DELI,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+769,2013-01-01,30,EGGS,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+770,2013-01-01,30,FROZEN FOODS,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+771,2013-01-01,30,GROCERY I,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+772,2013-01-01,30,GROCERY II,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+783,2013-01-01,30,MEATS,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+787,2013-01-01,30,POULTRY,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+788,2013-01-01,30,PREPARED FOODS,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+789,2013-01-01,30,PRODUCE,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+791,2013-01-01,30,SEAFOOD,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+795,2013-01-01,31,BEVERAGES,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+797,2013-01-01,31,BREAD/BAKERY,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+800,2013-01-01,31,DAIRY,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+801,2013-01-01,31,DELI,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+802,2013-01-01,31,EGGS,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+803,2013-01-01,31,FROZEN FOODS,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+804,2013-01-01,31,GROCERY I,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+805,2013-01-01,31,GROCERY II,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+816,2013-01-01,31,MEATS,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+820,2013-01-01,31,POULTRY,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+821,2013-01-01,31,PREPARED FOODS,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+822,2013-01-01,31,PRODUCE,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+824,2013-01-01,31,SEAFOOD,0.0,False,True,Babahoyo,Los Rios,B,10,1,False,True,False,1,1,False
+828,2013-01-01,32,BEVERAGES,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+830,2013-01-01,32,BREAD/BAKERY,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+833,2013-01-01,32,DAIRY,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+834,2013-01-01,32,DELI,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+835,2013-01-01,32,EGGS,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+836,2013-01-01,32,FROZEN FOODS,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+837,2013-01-01,32,GROCERY I,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+838,2013-01-01,32,GROCERY II,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+849,2013-01-01,32,MEATS,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+853,2013-01-01,32,POULTRY,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+854,2013-01-01,32,PREPARED FOODS,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+855,2013-01-01,32,PRODUCE,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+857,2013-01-01,32,SEAFOOD,0.0,False,True,Guayaquil,Guayas,C,3,1,False,True,False,1,1,False
+861,2013-01-01,33,BEVERAGES,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+863,2013-01-01,33,BREAD/BAKERY,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+866,2013-01-01,33,DAIRY,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+867,2013-01-01,33,DELI,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+868,2013-01-01,33,EGGS,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+869,2013-01-01,33,FROZEN FOODS,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+870,2013-01-01,33,GROCERY I,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+871,2013-01-01,33,GROCERY II,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+882,2013-01-01,33,MEATS,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+886,2013-01-01,33,POULTRY,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+887,2013-01-01,33,PREPARED FOODS,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+888,2013-01-01,33,PRODUCE,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+890,2013-01-01,33,SEAFOOD,0.0,False,True,Quevedo,Los Rios,C,3,1,False,True,False,1,1,False
+894,2013-01-01,34,BEVERAGES,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+896,2013-01-01,34,BREAD/BAKERY,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+899,2013-01-01,34,DAIRY,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+900,2013-01-01,34,DELI,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+901,2013-01-01,34,EGGS,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+902,2013-01-01,34,FROZEN FOODS,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+903,2013-01-01,34,GROCERY I,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+904,2013-01-01,34,GROCERY II,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+915,2013-01-01,34,MEATS,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+919,2013-01-01,34,POULTRY,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+920,2013-01-01,34,PREPARED FOODS,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+921,2013-01-01,34,PRODUCE,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+923,2013-01-01,34,SEAFOOD,0.0,False,True,Guayaquil,Guayas,B,6,1,False,True,False,1,1,False
+927,2013-01-01,35,BEVERAGES,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+929,2013-01-01,35,BREAD/BAKERY,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+932,2013-01-01,35,DAIRY,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+933,2013-01-01,35,DELI,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+934,2013-01-01,35,EGGS,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+935,2013-01-01,35,FROZEN FOODS,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+936,2013-01-01,35,GROCERY I,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+937,2013-01-01,35,GROCERY II,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+948,2013-01-01,35,MEATS,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+952,2013-01-01,35,POULTRY,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+953,2013-01-01,35,PREPARED FOODS,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+954,2013-01-01,35,PRODUCE,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+956,2013-01-01,35,SEAFOOD,0.0,False,True,Playas,Guayas,C,3,1,False,True,False,1,1,False
+960,2013-01-01,36,BEVERAGES,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+962,2013-01-01,36,BREAD/BAKERY,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+965,2013-01-01,36,DAIRY,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+966,2013-01-01,36,DELI,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+967,2013-01-01,36,EGGS,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+968,2013-01-01,36,FROZEN FOODS,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+969,2013-01-01,36,GROCERY I,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+970,2013-01-01,36,GROCERY II,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+981,2013-01-01,36,MEATS,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+985,2013-01-01,36,POULTRY,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+986,2013-01-01,36,PREPARED FOODS,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+987,2013-01-01,36,PRODUCE,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+989,2013-01-01,36,SEAFOOD,0.0,False,True,Libertad,Guayas,E,10,1,False,True,False,1,1,False
+993,2013-01-01,37,BEVERAGES,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+995,2013-01-01,37,BREAD/BAKERY,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+998,2013-01-01,37,DAIRY,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+999,2013-01-01,37,DELI,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1000,2013-01-01,37,EGGS,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1001,2013-01-01,37,FROZEN FOODS,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1002,2013-01-01,37,GROCERY I,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1003,2013-01-01,37,GROCERY II,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1014,2013-01-01,37,MEATS,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1018,2013-01-01,37,POULTRY,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1019,2013-01-01,37,PREPARED FOODS,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1020,2013-01-01,37,PRODUCE,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1022,2013-01-01,37,SEAFOOD,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1026,2013-01-01,38,BEVERAGES,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1028,2013-01-01,38,BREAD/BAKERY,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1031,2013-01-01,38,DAIRY,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1032,2013-01-01,38,DELI,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1033,2013-01-01,38,EGGS,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1034,2013-01-01,38,FROZEN FOODS,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1035,2013-01-01,38,GROCERY I,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1036,2013-01-01,38,GROCERY II,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1047,2013-01-01,38,MEATS,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1051,2013-01-01,38,POULTRY,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1052,2013-01-01,38,PREPARED FOODS,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1053,2013-01-01,38,PRODUCE,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1055,2013-01-01,38,SEAFOOD,0.0,False,True,Loja,Loja,D,4,1,False,True,False,1,1,False
+1059,2013-01-01,39,BEVERAGES,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1061,2013-01-01,39,BREAD/BAKERY,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1064,2013-01-01,39,DAIRY,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1065,2013-01-01,39,DELI,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1066,2013-01-01,39,EGGS,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1067,2013-01-01,39,FROZEN FOODS,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1068,2013-01-01,39,GROCERY I,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1069,2013-01-01,39,GROCERY II,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1080,2013-01-01,39,MEATS,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1084,2013-01-01,39,POULTRY,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1085,2013-01-01,39,PREPARED FOODS,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1086,2013-01-01,39,PRODUCE,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1088,2013-01-01,39,SEAFOOD,0.0,False,True,Cuenca,Azuay,B,6,1,False,True,False,1,1,False
+1092,2013-01-01,4,BEVERAGES,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1094,2013-01-01,4,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1097,2013-01-01,4,DAIRY,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1098,2013-01-01,4,DELI,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1099,2013-01-01,4,EGGS,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1100,2013-01-01,4,FROZEN FOODS,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1101,2013-01-01,4,GROCERY I,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1102,2013-01-01,4,GROCERY II,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1113,2013-01-01,4,MEATS,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1117,2013-01-01,4,POULTRY,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1118,2013-01-01,4,PREPARED FOODS,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1119,2013-01-01,4,PRODUCE,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1121,2013-01-01,4,SEAFOOD,0.0,False,True,Quito,Pichincha,D,9,1,False,True,False,1,1,False
+1125,2013-01-01,40,BEVERAGES,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1127,2013-01-01,40,BREAD/BAKERY,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1130,2013-01-01,40,DAIRY,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1131,2013-01-01,40,DELI,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1132,2013-01-01,40,EGGS,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1133,2013-01-01,40,FROZEN FOODS,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1134,2013-01-01,40,GROCERY I,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1135,2013-01-01,40,GROCERY II,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1146,2013-01-01,40,MEATS,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1150,2013-01-01,40,POULTRY,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1151,2013-01-01,40,PREPARED FOODS,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1152,2013-01-01,40,PRODUCE,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1154,2013-01-01,40,SEAFOOD,0.0,False,True,Machala,El Oro,C,3,1,False,True,False,1,1,False
+1158,2013-01-01,41,BEVERAGES,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1160,2013-01-01,41,BREAD/BAKERY,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1163,2013-01-01,41,DAIRY,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1164,2013-01-01,41,DELI,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1165,2013-01-01,41,EGGS,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1166,2013-01-01,41,FROZEN FOODS,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1167,2013-01-01,41,GROCERY I,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1168,2013-01-01,41,GROCERY II,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1179,2013-01-01,41,MEATS,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1183,2013-01-01,41,POULTRY,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1184,2013-01-01,41,PREPARED FOODS,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1185,2013-01-01,41,PRODUCE,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1187,2013-01-01,41,SEAFOOD,0.0,False,True,Machala,El Oro,D,4,1,False,True,False,1,1,False
+1191,2013-01-01,42,BEVERAGES,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1193,2013-01-01,42,BREAD/BAKERY,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1196,2013-01-01,42,DAIRY,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1197,2013-01-01,42,DELI,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1198,2013-01-01,42,EGGS,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1199,2013-01-01,42,FROZEN FOODS,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1200,2013-01-01,42,GROCERY I,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1201,2013-01-01,42,GROCERY II,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1212,2013-01-01,42,MEATS,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1216,2013-01-01,42,POULTRY,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1217,2013-01-01,42,PREPARED FOODS,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1218,2013-01-01,42,PRODUCE,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1220,2013-01-01,42,SEAFOOD,0.0,False,True,Cuenca,Azuay,D,2,1,False,True,False,1,1,False
+1224,2013-01-01,43,BEVERAGES,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1226,2013-01-01,43,BREAD/BAKERY,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1229,2013-01-01,43,DAIRY,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1230,2013-01-01,43,DELI,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1231,2013-01-01,43,EGGS,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1232,2013-01-01,43,FROZEN FOODS,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1233,2013-01-01,43,GROCERY I,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1234,2013-01-01,43,GROCERY II,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1245,2013-01-01,43,MEATS,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1249,2013-01-01,43,POULTRY,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1250,2013-01-01,43,PREPARED FOODS,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1251,2013-01-01,43,PRODUCE,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1253,2013-01-01,43,SEAFOOD,0.0,False,True,Esmeraldas,Esmeraldas,E,10,1,False,True,False,1,1,False
+1257,2013-01-01,44,BEVERAGES,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1259,2013-01-01,44,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1262,2013-01-01,44,DAIRY,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1263,2013-01-01,44,DELI,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1264,2013-01-01,44,EGGS,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1265,2013-01-01,44,FROZEN FOODS,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1266,2013-01-01,44,GROCERY I,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1267,2013-01-01,44,GROCERY II,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1278,2013-01-01,44,MEATS,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1282,2013-01-01,44,POULTRY,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1283,2013-01-01,44,PREPARED FOODS,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1284,2013-01-01,44,PRODUCE,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1286,2013-01-01,44,SEAFOOD,0.0,False,True,Quito,Pichincha,A,5,1,False,True,False,1,1,False
+1290,2013-01-01,45,BEVERAGES,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1292,2013-01-01,45,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1295,2013-01-01,45,DAIRY,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1296,2013-01-01,45,DELI,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1297,2013-01-01,45,EGGS,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1298,2013-01-01,45,FROZEN FOODS,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1299,2013-01-01,45,GROCERY I,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1300,2013-01-01,45,GROCERY II,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1311,2013-01-01,45,MEATS,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1315,2013-01-01,45,POULTRY,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1316,2013-01-01,45,PREPARED FOODS,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1317,2013-01-01,45,PRODUCE,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1319,2013-01-01,45,SEAFOOD,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1323,2013-01-01,46,BEVERAGES,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1325,2013-01-01,46,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1328,2013-01-01,46,DAIRY,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1329,2013-01-01,46,DELI,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1330,2013-01-01,46,EGGS,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1331,2013-01-01,46,FROZEN FOODS,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1332,2013-01-01,46,GROCERY I,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1333,2013-01-01,46,GROCERY II,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1344,2013-01-01,46,MEATS,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1348,2013-01-01,46,POULTRY,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1349,2013-01-01,46,PREPARED FOODS,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1350,2013-01-01,46,PRODUCE,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1352,2013-01-01,46,SEAFOOD,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1356,2013-01-01,47,BEVERAGES,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1358,2013-01-01,47,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1361,2013-01-01,47,DAIRY,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1362,2013-01-01,47,DELI,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1363,2013-01-01,47,EGGS,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1364,2013-01-01,47,FROZEN FOODS,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1365,2013-01-01,47,GROCERY I,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1366,2013-01-01,47,GROCERY II,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1377,2013-01-01,47,MEATS,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1381,2013-01-01,47,POULTRY,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1382,2013-01-01,47,PREPARED FOODS,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1383,2013-01-01,47,PRODUCE,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1385,2013-01-01,47,SEAFOOD,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1389,2013-01-01,48,BEVERAGES,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1391,2013-01-01,48,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1394,2013-01-01,48,DAIRY,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1395,2013-01-01,48,DELI,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1396,2013-01-01,48,EGGS,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1397,2013-01-01,48,FROZEN FOODS,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1398,2013-01-01,48,GROCERY I,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1399,2013-01-01,48,GROCERY II,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1410,2013-01-01,48,MEATS,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1414,2013-01-01,48,POULTRY,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1415,2013-01-01,48,PREPARED FOODS,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1416,2013-01-01,48,PRODUCE,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1418,2013-01-01,48,SEAFOOD,0.0,False,True,Quito,Pichincha,A,14,1,False,True,False,1,1,False
+1422,2013-01-01,49,BEVERAGES,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1424,2013-01-01,49,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1427,2013-01-01,49,DAIRY,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1428,2013-01-01,49,DELI,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1429,2013-01-01,49,EGGS,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1430,2013-01-01,49,FROZEN FOODS,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1431,2013-01-01,49,GROCERY I,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1432,2013-01-01,49,GROCERY II,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1443,2013-01-01,49,MEATS,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1447,2013-01-01,49,POULTRY,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1448,2013-01-01,49,PREPARED FOODS,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1449,2013-01-01,49,PRODUCE,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1451,2013-01-01,49,SEAFOOD,0.0,False,True,Quito,Pichincha,A,11,1,False,True,False,1,1,False
+1455,2013-01-01,5,BEVERAGES,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1457,2013-01-01,5,BREAD/BAKERY,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1460,2013-01-01,5,DAIRY,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1461,2013-01-01,5,DELI,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1462,2013-01-01,5,EGGS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1463,2013-01-01,5,FROZEN FOODS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1464,2013-01-01,5,GROCERY I,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1465,2013-01-01,5,GROCERY II,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1476,2013-01-01,5,MEATS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1480,2013-01-01,5,POULTRY,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1481,2013-01-01,5,PREPARED FOODS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1482,2013-01-01,5,PRODUCE,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1484,2013-01-01,5,SEAFOOD,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,D,4,1,False,True,False,1,1,False
+1488,2013-01-01,50,BEVERAGES,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1490,2013-01-01,50,BREAD/BAKERY,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1493,2013-01-01,50,DAIRY,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1494,2013-01-01,50,DELI,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1495,2013-01-01,50,EGGS,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1496,2013-01-01,50,FROZEN FOODS,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1497,2013-01-01,50,GROCERY I,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1498,2013-01-01,50,GROCERY II,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1509,2013-01-01,50,MEATS,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1513,2013-01-01,50,POULTRY,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1514,2013-01-01,50,PREPARED FOODS,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1515,2013-01-01,50,PRODUCE,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1517,2013-01-01,50,SEAFOOD,0.0,False,True,Ambato,Tungurahua,A,14,1,False,True,False,1,1,False
+1521,2013-01-01,51,BEVERAGES,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1523,2013-01-01,51,BREAD/BAKERY,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1526,2013-01-01,51,DAIRY,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1527,2013-01-01,51,DELI,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1528,2013-01-01,51,EGGS,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1529,2013-01-01,51,FROZEN FOODS,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1530,2013-01-01,51,GROCERY I,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1531,2013-01-01,51,GROCERY II,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1542,2013-01-01,51,MEATS,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1546,2013-01-01,51,POULTRY,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1547,2013-01-01,51,PREPARED FOODS,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1548,2013-01-01,51,PRODUCE,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1550,2013-01-01,51,SEAFOOD,0.0,False,True,Guayaquil,Guayas,A,17,1,False,True,False,1,1,False
+1554,2013-01-01,52,BEVERAGES,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1556,2013-01-01,52,BREAD/BAKERY,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1559,2013-01-01,52,DAIRY,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1560,2013-01-01,52,DELI,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1561,2013-01-01,52,EGGS,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1562,2013-01-01,52,FROZEN FOODS,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1563,2013-01-01,52,GROCERY I,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1564,2013-01-01,52,GROCERY II,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1575,2013-01-01,52,MEATS,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1579,2013-01-01,52,POULTRY,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1580,2013-01-01,52,PREPARED FOODS,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1581,2013-01-01,52,PRODUCE,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1583,2013-01-01,52,SEAFOOD,0.0,False,True,Manta,Manabi,A,11,1,False,True,False,1,1,False
+1587,2013-01-01,53,BEVERAGES,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1589,2013-01-01,53,BREAD/BAKERY,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1592,2013-01-01,53,DAIRY,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1593,2013-01-01,53,DELI,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1594,2013-01-01,53,EGGS,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1595,2013-01-01,53,FROZEN FOODS,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1596,2013-01-01,53,GROCERY I,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1597,2013-01-01,53,GROCERY II,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1608,2013-01-01,53,MEATS,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1612,2013-01-01,53,POULTRY,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1613,2013-01-01,53,PREPARED FOODS,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1614,2013-01-01,53,PRODUCE,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1616,2013-01-01,53,SEAFOOD,0.0,False,True,Manta,Manabi,D,13,1,False,True,False,1,1,False
+1620,2013-01-01,54,BEVERAGES,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1622,2013-01-01,54,BREAD/BAKERY,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1625,2013-01-01,54,DAIRY,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1626,2013-01-01,54,DELI,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1627,2013-01-01,54,EGGS,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1628,2013-01-01,54,FROZEN FOODS,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1629,2013-01-01,54,GROCERY I,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1630,2013-01-01,54,GROCERY II,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1641,2013-01-01,54,MEATS,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1645,2013-01-01,54,POULTRY,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1646,2013-01-01,54,PREPARED FOODS,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1647,2013-01-01,54,PRODUCE,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1649,2013-01-01,54,SEAFOOD,0.0,False,True,El Carmen,Manabi,C,3,1,False,True,False,1,1,False
+1653,2013-01-01,6,BEVERAGES,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1655,2013-01-01,6,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1658,2013-01-01,6,DAIRY,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1659,2013-01-01,6,DELI,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1660,2013-01-01,6,EGGS,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1661,2013-01-01,6,FROZEN FOODS,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1662,2013-01-01,6,GROCERY I,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1663,2013-01-01,6,GROCERY II,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1674,2013-01-01,6,MEATS,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1678,2013-01-01,6,POULTRY,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1679,2013-01-01,6,PREPARED FOODS,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1680,2013-01-01,6,PRODUCE,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1682,2013-01-01,6,SEAFOOD,0.0,False,True,Quito,Pichincha,D,13,1,False,True,False,1,1,False
+1686,2013-01-01,7,BEVERAGES,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1688,2013-01-01,7,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1691,2013-01-01,7,DAIRY,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1692,2013-01-01,7,DELI,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1693,2013-01-01,7,EGGS,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1694,2013-01-01,7,FROZEN FOODS,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1695,2013-01-01,7,GROCERY I,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1696,2013-01-01,7,GROCERY II,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1707,2013-01-01,7,MEATS,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1711,2013-01-01,7,POULTRY,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1712,2013-01-01,7,PREPARED FOODS,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1713,2013-01-01,7,PRODUCE,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1715,2013-01-01,7,SEAFOOD,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1719,2013-01-01,8,BEVERAGES,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1721,2013-01-01,8,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1724,2013-01-01,8,DAIRY,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1725,2013-01-01,8,DELI,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1726,2013-01-01,8,EGGS,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1727,2013-01-01,8,FROZEN FOODS,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1728,2013-01-01,8,GROCERY I,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1729,2013-01-01,8,GROCERY II,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1740,2013-01-01,8,MEATS,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1744,2013-01-01,8,POULTRY,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1745,2013-01-01,8,PREPARED FOODS,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1746,2013-01-01,8,PRODUCE,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1748,2013-01-01,8,SEAFOOD,0.0,False,True,Quito,Pichincha,D,8,1,False,True,False,1,1,False
+1752,2013-01-01,9,BEVERAGES,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1754,2013-01-01,9,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1757,2013-01-01,9,DAIRY,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1758,2013-01-01,9,DELI,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1759,2013-01-01,9,EGGS,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1760,2013-01-01,9,FROZEN FOODS,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1761,2013-01-01,9,GROCERY I,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1762,2013-01-01,9,GROCERY II,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1773,2013-01-01,9,MEATS,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1777,2013-01-01,9,POULTRY,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1778,2013-01-01,9,PREPARED FOODS,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1779,2013-01-01,9,PRODUCE,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1781,2013-01-01,9,SEAFOOD,0.0,False,True,Quito,Pichincha,B,6,1,False,True,False,1,1,False
+1785,2013-01-02,1,BEVERAGES,1091.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1787,2013-01-02,1,BREAD/BAKERY,470.652,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1790,2013-01-02,1,DAIRY,579.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1791,2013-01-02,1,DELI,164.069,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1792,2013-01-02,1,EGGS,246.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1793,2013-01-02,1,FROZEN FOODS,131.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1794,2013-01-02,1,GROCERY I,2652.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1795,2013-01-02,1,GROCERY II,31.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1806,2013-01-02,1,MEATS,369.101,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1810,2013-01-02,1,POULTRY,247.297,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1811,2013-01-02,1,PREPARED FOODS,47.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1812,2013-01-02,1,PRODUCE,0.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1814,2013-01-02,1,SEAFOOD,38.029,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+1818,2013-01-02,10,BEVERAGES,396.0,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1820,2013-01-02,10,BREAD/BAKERY,151.0,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1823,2013-01-02,10,DAIRY,101.0,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1824,2013-01-02,10,DELI,276.0,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1825,2013-01-02,10,EGGS,57.0,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1826,2013-01-02,10,FROZEN FOODS,41.164,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1827,2013-01-02,10,GROCERY I,2579.0,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1828,2013-01-02,10,GROCERY II,8.0,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1839,2013-01-02,10,MEATS,291.14,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1843,2013-01-02,10,POULTRY,146.784,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1844,2013-01-02,10,PREPARED FOODS,26.0,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1845,2013-01-02,10,PRODUCE,0.0,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1847,2013-01-02,10,SEAFOOD,3.0,False,True,Quito,Pichincha,C,15,0,False,False,False,2,1,False
+1851,2013-01-02,11,BEVERAGES,3443.0,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1853,2013-01-02,11,BREAD/BAKERY,763.0,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1856,2013-01-02,11,DAIRY,296.0,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1857,2013-01-02,11,DELI,527.295,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1858,2013-01-02,11,EGGS,140.0,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1859,2013-01-02,11,FROZEN FOODS,57.771,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1860,2013-01-02,11,GROCERY I,7736.0,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1861,2013-01-02,11,GROCERY II,15.0,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1872,2013-01-02,11,MEATS,832.541,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1876,2013-01-02,11,POULTRY,548.031,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1877,2013-01-02,11,PREPARED FOODS,31.0,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1878,2013-01-02,11,PRODUCE,0.0,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1880,2013-01-02,11,SEAFOOD,5.0,False,True,Cayambe,Pichincha,B,6,0,False,False,False,2,1,False
+1884,2013-01-02,12,BEVERAGES,682.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1886,2013-01-02,12,BREAD/BAKERY,337.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1889,2013-01-02,12,DAIRY,151.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1890,2013-01-02,12,DELI,176.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1891,2013-01-02,12,EGGS,75.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1892,2013-01-02,12,FROZEN FOODS,14.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1893,2013-01-02,12,GROCERY I,2677.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1894,2013-01-02,12,GROCERY II,5.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1905,2013-01-02,12,MEATS,232.349,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1909,2013-01-02,12,POULTRY,103.168,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1910,2013-01-02,12,PREPARED FOODS,41.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1911,2013-01-02,12,PRODUCE,0.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1913,2013-01-02,12,SEAFOOD,9.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1917,2013-01-02,13,BEVERAGES,767.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1919,2013-01-02,13,BREAD/BAKERY,231.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1922,2013-01-02,13,DAIRY,111.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1923,2013-01-02,13,DELI,195.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1924,2013-01-02,13,EGGS,48.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1925,2013-01-02,13,FROZEN FOODS,28.541,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1926,2013-01-02,13,GROCERY I,2587.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1927,2013-01-02,13,GROCERY II,5.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1938,2013-01-02,13,MEATS,137.91,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1942,2013-01-02,13,POULTRY,102.38,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1943,2013-01-02,13,PREPARED FOODS,25.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1944,2013-01-02,13,PRODUCE,0.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1946,2013-01-02,13,SEAFOOD,1.0,False,True,Latacunga,Cotopaxi,C,15,0,False,False,False,2,1,False
+1950,2013-01-02,14,BEVERAGES,744.0,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1952,2013-01-02,14,BREAD/BAKERY,409.0,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1955,2013-01-02,14,DAIRY,154.0,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1956,2013-01-02,14,DELI,204.0,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1957,2013-01-02,14,EGGS,53.0,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1958,2013-01-02,14,FROZEN FOODS,119.343,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1959,2013-01-02,14,GROCERY I,3257.0,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1960,2013-01-02,14,GROCERY II,5.0,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1971,2013-01-02,14,MEATS,368.732,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1975,2013-01-02,14,POULTRY,98.178,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1976,2013-01-02,14,PREPARED FOODS,24.0,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1977,2013-01-02,14,PRODUCE,0.0,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1979,2013-01-02,14,SEAFOOD,9.0,False,True,Riobamba,Chimborazo,C,7,0,False,False,False,2,1,False
+1983,2013-01-02,15,BEVERAGES,938.0,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+1985,2013-01-02,15,BREAD/BAKERY,270.0,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+1988,2013-01-02,15,DAIRY,152.0,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+1989,2013-01-02,15,DELI,219.0,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+1990,2013-01-02,15,EGGS,73.0,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+1991,2013-01-02,15,FROZEN FOODS,33.0,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+1992,2013-01-02,15,GROCERY I,3130.0,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+1993,2013-01-02,15,GROCERY II,9.0,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+2004,2013-01-02,15,MEATS,84.805,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+2008,2013-01-02,15,POULTRY,0.0,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+2009,2013-01-02,15,PREPARED FOODS,22.0,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+2010,2013-01-02,15,PRODUCE,0.0,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+2012,2013-01-02,15,SEAFOOD,4.0,False,True,Ibarra,Imbabura,C,15,0,False,False,False,2,1,False
+2016,2013-01-02,16,BEVERAGES,389.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2018,2013-01-02,16,BREAD/BAKERY,227.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2021,2013-01-02,16,DAIRY,122.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2022,2013-01-02,16,DELI,295.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2023,2013-01-02,16,EGGS,155.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2024,2013-01-02,16,FROZEN FOODS,29.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2025,2013-01-02,16,GROCERY I,3176.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2026,2013-01-02,16,GROCERY II,10.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2037,2013-01-02,16,MEATS,12.584,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2041,2013-01-02,16,POULTRY,117.988,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2042,2013-01-02,16,PREPARED FOODS,37.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2043,2013-01-02,16,PRODUCE,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2045,2013-01-02,16,SEAFOOD,5.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,C,3,0,False,False,False,2,1,False
+2049,2013-01-02,17,BEVERAGES,1011.0,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2051,2013-01-02,17,BREAD/BAKERY,282.0,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2054,2013-01-02,17,DAIRY,185.0,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2055,2013-01-02,17,DELI,378.0,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2056,2013-01-02,17,EGGS,139.0,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2057,2013-01-02,17,FROZEN FOODS,48.516,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2058,2013-01-02,17,GROCERY I,3431.0,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2059,2013-01-02,17,GROCERY II,6.0,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2070,2013-01-02,17,MEATS,226.374,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2074,2013-01-02,17,POULTRY,223.623,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2075,2013-01-02,17,PREPARED FOODS,47.0,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2076,2013-01-02,17,PRODUCE,0.0,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2078,2013-01-02,17,SEAFOOD,16.0,False,True,Quito,Pichincha,C,12,0,False,False,False,2,1,False
+2082,2013-01-02,18,BEVERAGES,1089.0,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2084,2013-01-02,18,BREAD/BAKERY,833.0,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2087,2013-01-02,18,DAIRY,388.0,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2088,2013-01-02,18,DELI,255.819,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2089,2013-01-02,18,EGGS,238.0,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2090,2013-01-02,18,FROZEN FOODS,93.764,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2091,2013-01-02,18,GROCERY I,3756.0,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2092,2013-01-02,18,GROCERY II,22.0,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2103,2013-01-02,18,MEATS,117.167,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2107,2013-01-02,18,POULTRY,173.817,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2108,2013-01-02,18,PREPARED FOODS,60.0,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2109,2013-01-02,18,PRODUCE,0.0,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2111,2013-01-02,18,SEAFOOD,23.0,False,True,Quito,Pichincha,B,16,0,False,False,False,2,1,False
+2115,2013-01-02,19,BEVERAGES,1220.0,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2117,2013-01-02,19,BREAD/BAKERY,388.0,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2120,2013-01-02,19,DAIRY,106.0,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2121,2013-01-02,19,DELI,193.0,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2122,2013-01-02,19,EGGS,40.0,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2123,2013-01-02,19,FROZEN FOODS,13.0,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2124,2013-01-02,19,GROCERY I,2439.0,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2125,2013-01-02,19,GROCERY II,13.0,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2136,2013-01-02,19,MEATS,153.44101,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2140,2013-01-02,19,POULTRY,59.947998,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2141,2013-01-02,19,PREPARED FOODS,42.0,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2142,2013-01-02,19,PRODUCE,0.0,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2144,2013-01-02,19,SEAFOOD,3.0,False,True,Guaranda,Bolivar,C,15,0,False,False,False,2,1,False
+2148,2013-01-02,2,BEVERAGES,1481.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2150,2013-01-02,2,BREAD/BAKERY,523.882,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2153,2013-01-02,2,DAIRY,651.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2154,2013-01-02,2,DELI,303.875,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2155,2013-01-02,2,EGGS,307.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2156,2013-01-02,2,FROZEN FOODS,111.1,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2157,2013-01-02,2,GROCERY I,3870.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2158,2013-01-02,2,GROCERY II,39.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2169,2013-01-02,2,MEATS,655.626,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2173,2013-01-02,2,POULTRY,342.50598,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2174,2013-01-02,2,PREPARED FOODS,127.357,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2175,2013-01-02,2,PRODUCE,0.0,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2177,2013-01-02,2,SEAFOOD,31.373001,False,True,Quito,Pichincha,D,13,0,False,False,False,2,1,False
+2181,2013-01-02,20,BEVERAGES,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2183,2013-01-02,20,BREAD/BAKERY,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2186,2013-01-02,20,DAIRY,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2187,2013-01-02,20,DELI,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2188,2013-01-02,20,EGGS,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2189,2013-01-02,20,FROZEN FOODS,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2190,2013-01-02,20,GROCERY I,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2191,2013-01-02,20,GROCERY II,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2202,2013-01-02,20,MEATS,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2206,2013-01-02,20,POULTRY,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2207,2013-01-02,20,PREPARED FOODS,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2208,2013-01-02,20,PRODUCE,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2210,2013-01-02,20,SEAFOOD,0.0,False,True,Quito,Pichincha,B,6,0,False,False,False,2,1,False
+2214,2013-01-02,21,BEVERAGES,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2216,2013-01-02,21,BREAD/BAKERY,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2219,2013-01-02,21,DAIRY,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2220,2013-01-02,21,DELI,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2221,2013-01-02,21,EGGS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2222,2013-01-02,21,FROZEN FOODS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2223,2013-01-02,21,GROCERY I,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2224,2013-01-02,21,GROCERY II,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2235,2013-01-02,21,MEATS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2239,2013-01-02,21,POULTRY,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2240,2013-01-02,21,PREPARED FOODS,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2241,2013-01-02,21,PRODUCE,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2243,2013-01-02,21,SEAFOOD,0.0,False,True,Santo Domingo,Santo Domingo de los Tsachilas,B,6,0,False,False,False,2,1,False
+2247,2013-01-02,22,BEVERAGES,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2249,2013-01-02,22,BREAD/BAKERY,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2252,2013-01-02,22,DAIRY,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2253,2013-01-02,22,DELI,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2254,2013-01-02,22,EGGS,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2255,2013-01-02,22,FROZEN FOODS,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2256,2013-01-02,22,GROCERY I,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2257,2013-01-02,22,GROCERY II,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2268,2013-01-02,22,MEATS,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2272,2013-01-02,22,POULTRY,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2273,2013-01-02,22,PREPARED FOODS,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2274,2013-01-02,22,PRODUCE,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2276,2013-01-02,22,SEAFOOD,0.0,False,True,Puyo,Pastaza,C,7,0,False,False,False,2,1,False
+2280,2013-01-02,23,BEVERAGES,838.0,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2282,2013-01-02,23,BREAD/BAKERY,383.139,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2285,2013-01-02,23,DAIRY,344.0,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2286,2013-01-02,23,DELI,181.802,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2287,2013-01-02,23,EGGS,114.0,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2288,2013-01-02,23,FROZEN FOODS,98.882,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2289,2013-01-02,23,GROCERY I,2476.0,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2290,2013-01-02,23,GROCERY II,19.0,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2301,2013-01-02,23,MEATS,517.363,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2305,2013-01-02,23,POULTRY,342.012,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2306,2013-01-02,23,PREPARED FOODS,62.0,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2307,2013-01-02,23,PRODUCE,0.0,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2309,2013-01-02,23,SEAFOOD,25.139,False,True,Ambato,Tungurahua,D,9,0,False,False,False,2,1,False
+2313,2013-01-02,24,BEVERAGES,2312.0,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2315,2013-01-02,24,BREAD/BAKERY,660.255,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2318,2013-01-02,24,DAIRY,693.0,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2319,2013-01-02,24,DELI,284.943,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2320,2013-01-02,24,EGGS,276.0,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2321,2013-01-02,24,FROZEN FOODS,135.005,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2322,2013-01-02,24,GROCERY I,3920.0,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2323,2013-01-02,24,GROCERY II,24.0,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2334,2013-01-02,24,MEATS,453.601,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2338,2013-01-02,24,POULTRY,169.439,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2339,2013-01-02,24,PREPARED FOODS,120.048996,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2340,2013-01-02,24,PRODUCE,0.0,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2342,2013-01-02,24,SEAFOOD,46.561,False,True,Guayaquil,Guayas,D,1,0,False,False,False,2,1,False
+2346,2013-01-02,25,BEVERAGES,1373.0,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2348,2013-01-02,25,BREAD/BAKERY,303.615,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2351,2013-01-02,25,DAIRY,402.0,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2352,2013-01-02,25,DELI,122.162,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2353,2013-01-02,25,EGGS,136.0,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2354,2013-01-02,25,FROZEN FOODS,80.861,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2355,2013-01-02,25,GROCERY I,1521.0,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2356,2013-01-02,25,GROCERY II,13.0,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2367,2013-01-02,25,MEATS,244.703,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2371,2013-01-02,25,POULTRY,115.302,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2372,2013-01-02,25,PREPARED FOODS,95.581,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2373,2013-01-02,25,PRODUCE,0.0,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2375,2013-01-02,25,SEAFOOD,0.0,False,True,Salinas,Santa Elena,D,1,0,False,False,False,2,1,False
+2379,2013-01-02,26,BEVERAGES,470.0,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2381,2013-01-02,26,BREAD/BAKERY,439.0,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2384,2013-01-02,26,DAIRY,220.0,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2385,2013-01-02,26,DELI,172.846,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2386,2013-01-02,26,EGGS,114.0,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2387,2013-01-02,26,FROZEN FOODS,51.581,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2388,2013-01-02,26,GROCERY I,2366.0,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2389,2013-01-02,26,GROCERY II,7.0,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2400,2013-01-02,26,MEATS,381.225,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2404,2013-01-02,26,POULTRY,256.761,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2405,2013-01-02,26,PREPARED FOODS,38.0,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2406,2013-01-02,26,PRODUCE,0.0,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2408,2013-01-02,26,SEAFOOD,3.0,False,True,Guayaquil,Guayas,D,10,0,False,False,False,2,1,False
+2412,2013-01-02,27,BEVERAGES,1540.0,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2414,2013-01-02,27,BREAD/BAKERY,524.026,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2417,2013-01-02,27,DAIRY,439.0,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2418,2013-01-02,27,DELI,220.08,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2419,2013-01-02,27,EGGS,267.0,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2420,2013-01-02,27,FROZEN FOODS,57.0,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2421,2013-01-02,27,GROCERY I,2545.0,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2422,2013-01-02,27,GROCERY II,27.0,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2433,2013-01-02,27,MEATS,214.951,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2437,2013-01-02,27,POULTRY,279.86,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2438,2013-01-02,27,PREPARED FOODS,82.63,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2439,2013-01-02,27,PRODUCE,0.0,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2441,2013-01-02,27,SEAFOOD,20.0,False,True,Daule,Guayas,D,1,0,False,False,False,2,1,False
+2445,2013-01-02,28,BEVERAGES,786.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2447,2013-01-02,28,BREAD/BAKERY,461.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2450,2013-01-02,28,DAIRY,225.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2451,2013-01-02,28,DELI,218.017,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2452,2013-01-02,28,EGGS,110.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2453,2013-01-02,28,FROZEN FOODS,47.268,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2454,2013-01-02,28,GROCERY I,2133.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2455,2013-01-02,28,GROCERY II,6.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2466,2013-01-02,28,MEATS,45.007,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2470,2013-01-02,28,POULTRY,155.425,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2471,2013-01-02,28,PREPARED FOODS,57.757,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2472,2013-01-02,28,PRODUCE,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2474,2013-01-02,28,SEAFOOD,13.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2478,2013-01-02,29,BEVERAGES,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2480,2013-01-02,29,BREAD/BAKERY,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2483,2013-01-02,29,DAIRY,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2484,2013-01-02,29,DELI,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2485,2013-01-02,29,EGGS,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2486,2013-01-02,29,FROZEN FOODS,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2487,2013-01-02,29,GROCERY I,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2488,2013-01-02,29,GROCERY II,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2499,2013-01-02,29,MEATS,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2503,2013-01-02,29,POULTRY,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2504,2013-01-02,29,PREPARED FOODS,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2505,2013-01-02,29,PRODUCE,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2507,2013-01-02,29,SEAFOOD,0.0,False,True,Guayaquil,Guayas,E,10,0,False,False,False,2,1,False
+2511,2013-01-02,3,BEVERAGES,4486.0,False,True,Quito,Pichincha,D,8,0,False,False,False,2,1,False
+2513,2013-01-02,3,BREAD/BAKERY,1361.636,False,True,Quito,Pichincha,D,8,0,False,False,False,2,1,False
+2516,2013-01-02,3,DAIRY,1606.0,False,True,Quito,Pichincha,D,8,0,False,False,False,2,1,False
+2517,2013-01-02,3,DELI,600.273,False,True,Quito,Pichincha,D,8,0,False,False,False,2,1,False
+2518,2013-01-02,3,EGGS,814.0,False,True,Quito,Pichincha,D,8,0,False,False,False,2,1,False
+2519,2013-01-02,3,FROZEN FOODS,490.391,False,True,Quito,Pichincha,D,8,0,False,False,False,2,1,False
+2520,2013-01-02,3,GROCERY I,8463.0,False,True,Quito,Pichincha,D,8,0,False,False,False,2,1,False
+2521,2013-01-02,3,GROCERY II,93.0,False,True,Quito,Pichincha,D,8,0,False,False,False,2,1,False
+2532,2013-01-02,3,MEATS,945.636,False,True,Quito,Pichincha,D,8,0,False,False,False,2,1,False
+2536,2013-01-02,3,POULTRY,681.348,False,True,Quito,Pichincha,D,8,0,False,False,False,2,1,False
+2537,2013-01-02,3,PREPARED FOODS,428.0,False,True,Quito,Pichincha,D,8,0,False,False,False,2,1,False
+2538,2013-01-02,3,PRODUCE,0.0,False,True,Quito,Pichincha,D,8,0,False,False,False,2,1,False

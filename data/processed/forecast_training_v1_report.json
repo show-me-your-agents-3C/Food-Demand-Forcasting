@@ -1,0 +1,14 @@
+{
+  "source_food_rows": 1182168,
+  "source_series": 702,
+  "active_series": 689,
+  "intermittent_or_inactive_series": 13,
+  "active_input_rows": 1160276,
+  "intermittent_scope_excluded_rows": 21892,
+  "warmup_rows_without_14_day_history": 9646,
+  "forecast_training_rows": 1150630,
+  "forecast_training_retention_from_active": 0.991686,
+  "zero_sales_rows_retained": 104898,
+  "quality_deleted_rows": 0,
+  "note": "Excluded intermittent series and 14-day feature warm-up rows remain preserved in upstream cleaned files; no raw data is deleted."
+}
