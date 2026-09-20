@@ -63,8 +63,21 @@ An explanation agent must only verbalize `explanation_facts`; it must not invent
 ## Run
 
 ```bash
-cd /home/ubuntu/demand-forecasting
-/home/ubuntu/archive/food_forecast/.venv/bin/python -m src.food_forecast.pipeline
+python -m venv .venv && . .venv/bin/activate
+pip install -r requirements.txt
+python -m src.food_forecast.pipeline
 ```
 
 The first implementation intentionally uses a small, deterministic sample (three stores, eight food families, 120 days) so it runs quickly. Change limits in `src/food_forecast/config.py` as the project grows.
+
+## API service
+
+```bash
+uvicorn src.api.main:app --reload
+```
+
+Endpoints: `GET /health`, `GET /api/scope`, `GET /api/metrics`, `GET /api/summary`, `GET /api/forecast`, `GET /api/replenishment`, `GET /api/explanations`, `POST /api/chat`. Interactive docs at `/docs`.
+
+## Deploy
+
+See `docs/HANDOFF.md` and `deploy/` for the bare-metal Lightsail workflow.
