@@ -3,15 +3,18 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+
+load_dotenv()
 
 from src.api import agent, service
 from src.api.schemas import ChatRequest, ChatResponse, HealthResponse, MetricsResponse, ScopeResponse
-
-load_dotenv()
 
 app = FastAPI(
     title="FreshFlow Demand Planning API",
@@ -33,6 +36,10 @@ app.add_middleware(
 def health() -> HealthResponse:
     try:
         scope = service.get_scope()
+        service.get_forecast(limit=1)
+        service.get_metrics()
+        service.get_summary()
+        service.get_explanations()
         data_available = True
         data_detail = f"{len(scope['stores'])} stores, {len(scope['families'])} families"
     except Exception as exc:
@@ -94,6 +101,15 @@ def explanations(
 def chat(request: ChatRequest) -> ChatResponse:
     result = agent.run_agent(request.message, [turn.model_dump() for turn in request.history])
     return ChatResponse(**result)
+
+
+_frontend = Path(__file__).resolve().parents[2] / "frontend"
+if (_frontend / "assets").is_dir():
+    app.mount("/assets", StaticFiles(directory=_frontend / "assets"), name="assets")
+
+    @app.get("/", include_in_schema=False)
+    def dashboard():
+        return FileResponse(_frontend / "index.html")
 
 
 def main() -> None:

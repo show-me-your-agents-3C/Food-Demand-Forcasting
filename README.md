@@ -1,5 +1,15 @@
 # FreshFlow: Demand Forecasting & Replenishment Decision Support
 
+## Local dashboard
+
+The Chinese dashboard is available at `/` when running the API. On this Mac,
+double-click `start-local.command`, then open `http://127.0.0.1:8001`.
+See `docs/FRONTEND_HANDOFF.md` for setup, changed files and the demo walkthrough.
+
+The frontend uses the existing forecast and replenishment artifacts. No frontend
+build step or external CDN is required. Without gateway credentials, the chat
+panel visibly uses the scoped rule-based fallback.
+
 FreshFlow is a portfolio-ready prototype for food retail planning. It uses the official Favorita Store Sales data for store-family demand forecasting and transparently simulated operational constraints for replenishment decisions.
 
 ## Outputs
