@@ -2,6 +2,21 @@
 
 FreshFlow is a portfolio-ready prototype for food retail planning. It uses the official Favorita Store Sales data for store-family demand forecasting and transparently simulated operational constraints for replenishment decisions.
 
+## Current model: v3 (see MODEL_CARD.md)
+
+Direct 7-day LightGBM (Tweedie p50 + quantile p10/p90), retrained and evaluated on
+five historical windows: **11.7% mean WAPE vs 19.9% seasonal naive and 15.3% for v2**.
+Stable outputs for the agent, replenishment rules and dashboard are in `outputs/final/`;
+agent tools (forecast, explain, what-if promotion, reliability) are in
+`src/food_forecast/forecast_tools.py` - see `AGENT_INTEGRATION.md`.
+
+```bash
+pip install -r requirements-model.txt           # lightgbm, scikit-learn
+python -m src.food_forecast.train_final         # refresh outputs/final/
+python -m src.food_forecast.forecast_tools      # demo every agent tool
+python -m pytest tests -q
+```
+
 ## Outputs
 
 Running the pipeline writes the following evidence-backed artifacts to `outputs/`:

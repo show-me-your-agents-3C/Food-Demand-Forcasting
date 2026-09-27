@@ -1,0 +1,146 @@
+{
+  "model_version": "v3.0",
+  "created_at_utc": "2026-09-27T03:16:09+00:00",
+  "git_commit": "9adf801",
+  "data_source": "Kaggle Favorita Store Sales (train.csv, test.csv promotions, holidays_events.csv, stores.csv)",
+  "granularity": "store x food family x day",
+  "series": 702,
+  "series_by_route": {
+    "lightgbm": 698,
+    "intermittent": 4
+  },
+  "training_range": [
+    "2013-03-05",
+    "2017-08-15"
+  ],
+  "training_rows": 1034109,
+  "forecast_origin": "2017-08-16",
+  "horizon_days": 7,
+  "ordering_cycle": "weekly, Wednesday; features use only sales up to the day before the origin",
+  "features": [
+    "store_nbr",
+    "family",
+    "store_type",
+    "store_cluster",
+    "city",
+    "horizon_day",
+    "day_of_week",
+    "day_of_month",
+    "month",
+    "days_since_payday",
+    "is_payday",
+    "is_holiday",
+    "holiday_scope",
+    "days_to_holiday",
+    "days_since_holiday",
+    "is_national_event",
+    "is_workday",
+    "onpromotion",
+    "promo_sum_7",
+    "promo_sum_14",
+    "promo_lag_7",
+    "promo_mean_28_hist",
+    "promo_vs_hist",
+    "last_sales",
+    "mean_7",
+    "mean_14",
+    "mean_28",
+    "mean_56",
+    "std_28",
+    "zero_frac_28",
+    "trend_7_28",
+    "lag_7",
+    "lag_14",
+    "lag_21",
+    "lag_28",
+    "same_dow_mean_4"
+  ],
+  "models": {
+    "p50": {
+      "spec": "v3_tweedie",
+      "objective": {
+        "objective": "tweedie",
+        "tweedie_variance_power": 1.2
+      },
+      "n_estimators": 700
+    },
+    "p10": {
+      "spec": "v3_q10",
+      "objective": {
+        "objective": "quantile",
+        "alpha": 0.1
+      },
+      "n_estimators": 400
+    },
+    "p90": {
+      "spec": "v3_q90",
+      "objective": {
+        "objective": "quantile",
+        "alpha": 0.9
+      },
+      "n_estimators": 400
+    },
+    "shared_params": {
+      "learning_rate": 0.05,
+      "num_leaves": 63,
+      "min_child_samples": 50,
+      "subsample": 0.85,
+      "subsample_freq": 1,
+      "colsample_bytree": 0.9,
+      "reg_lambda": 1.0,
+      "random_state": 42,
+      "n_jobs": 2,
+      "verbosity": -1
+    },
+    "routing": {
+      "cold_start": "< 56 trading days at the order date -> same weekday last week (+/-30% band)",
+      "intermittent": ">= 50% zero-sales days in last 28 while the store was open >= 80% of them -> LightGBM, flagged low reliability (TSB tested in backtest and not better)",
+      "lightgbm": "all other series"
+    }
+  },
+  "backtest_windows": {
+    "2016-04_earthquake": [
+      "2016-04-13",
+      "2016-05-10"
+    ],
+    "2016-12_christmas": [
+      "2016-11-30",
+      "2016-12-27"
+    ],
+    "2017-02_carnival": [
+      "2017-02-22",
+      "2017-03-21"
+    ],
+    "2017-05_regular": [
+      "2017-05-03",
+      "2017-05-30"
+    ],
+    "2017-07_latest": [
+      "2017-07-19",
+      "2017-08-15"
+    ]
+  },
+  "stress_windows": [
+    "2016-04_earthquake"
+  ],
+  "forecast_schema": {
+    "forecast_origin": "Wednesday the order is placed (first forecast day)",
+    "date": "target day",
+    "horizon_day": "1..7 days ahead of the origin",
+    "store_nbr": "store id (Favorita)",
+    "family": "food product family",
+    "route": "lightgbm | cold_start (<56 trading days: same weekday last week) | intermittent (sparse demand in an open store: low reliability flag)",
+    "onpromotion": "planned number of promoted items (from the promotion calendar)",
+    "p10": "10th percentile of demand (units)",
+    "p50": "median demand forecast (units) - use as the point forecast",
+    "p90": "90th percentile of demand (units) - use for safety stock / service level",
+    "forecast_method": "model that produced the row",
+    "model_version": "v3.0"
+  },
+  "known_limitations": [
+    "Inventory, lead time, shelf life and MOQ are simulated downstream; the model only forecasts demand.",
+    "Promotion counts are assumed known in advance (retailer promotion calendar / Kaggle test.csv).",
+    "Granularity is product family, not SKU.",
+    "Unforeseen shocks (e.g. the 2016 earthquake) are not predictable from history; see stress-test window."
+  ]
+}

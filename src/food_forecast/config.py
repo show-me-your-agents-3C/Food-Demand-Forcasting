@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-PROJECT_ROOT = Path("/home/ubuntu/demand-forecasting")
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DATA_PATH = PROJECT_ROOT / "data" / "favorita" / "train.csv"
 OUTPUT_DIR = PROJECT_ROOT / "outputs"
 

@@ -1,0 +1,257 @@
+window               2016-04_earthquake  2016-12_christmas  2017-02_carnival  2017-05_regular  2017-07_latest
+model                                                                                                        
+same_weekday_avg_4w            0.238685           0.216086          0.160402         0.140383        0.136982
+seasonal_naive                 0.329379           0.245190          0.200304         0.187310        0.162956
+v2_recursive                   0.213952           0.193704          0.161509         0.120704        0.134434
+v3_l1                          0.210629           0.156646          0.125710         0.104108        0.105064
+v3_l1_promo_bool               0.208572           0.157969          0.126249         0.104687        0.105605
+v3_tweedie                     0.212701           0.153801          0.113163         0.099760        0.100741
+{
+  "seasonal_naive": {
+    "mean_wape_regular_windows": 0.19894,
+    "best_window": {
+      "window": "2017-07_latest",
+      "wape": 0.162956
+    },
+    "worst_window": {
+      "window": "2016-12_christmas",
+      "wape": 0.24519
+    },
+    "pooled_regular": {
+      "n": 76479,
+      "actual_units": 83375378.7,
+      "mae": 218.8497,
+      "wape": 0.200748,
+      "bias": -0.022013
+    },
+    "stress_test_wape": 0.329379
+  },
+  "same_weekday_avg_4w": {
+    "mean_wape_regular_windows": 0.163463,
+    "best_window": {
+      "window": "2017-07_latest",
+      "wape": 0.136982
+    },
+    "worst_window": {
+      "window": "2016-12_christmas",
+      "wape": 0.216086
+    },
+    "pooled_regular": {
+      "n": 76479,
+      "actual_units": 83375378.7,
+      "mae": 180.3036,
+      "wape": 0.16539,
+      "bias": -0.037784
+    },
+    "stress_test_wape": 0.238685
+  },
+  "v2_recursive": {
+    "mean_wape_regular_windows": 0.152588,
+    "best_window": {
+      "window": "2017-05_regular",
+      "wape": 0.120704
+    },
+    "worst_window": {
+      "window": "2016-12_christmas",
+      "wape": 0.193704
+    },
+    "pooled_regular": {
+      "n": 76479,
+      "actual_units": 83375378.7,
+      "mae": 168.113,
+      "wape": 0.154208,
+      "bias": -0.051818
+    },
+    "stress_test_wape": 0.213952
+  },
+  "v3_l1": {
+    "mean_wape_regular_windows": 0.122882,
+    "best_window": {
+      "window": "2017-05_regular",
+      "wape": 0.104108
+    },
+    "worst_window": {
+      "window": "2016-12_christmas",
+      "wape": 0.156646
+    },
+    "pooled_regular": {
+      "n": 76479,
+      "actual_units": 83375378.7,
+      "mae": 135.3741,
+      "wape": 0.124177,
+      "bias": -0.032047
+    },
+    "stress_test_wape": 0.210629
+  },
+  "v3_tweedie": {
+    "mean_wape_regular_windows": 0.116866,
+    "best_window": {
+      "window": "2017-05_regular",
+      "wape": 0.09976
+    },
+    "worst_window": {
+      "window": "2016-12_christmas",
+      "wape": 0.153801
+    },
+    "pooled_regular": {
+      "n": 76479,
+      "actual_units": 83375378.7,
+      "mae": 128.845,
+      "wape": 0.118188,
+      "bias": -0.020988
+    },
+    "stress_test_wape": 0.212701
+  },
+  "v3_l1_promo_bool": {
+    "mean_wape_regular_windows": 0.123627,
+    "best_window": {
+      "window": "2017-05_regular",
+      "wape": 0.104687
+    },
+    "worst_window": {
+      "window": "2016-12_christmas",
+      "wape": 0.157969
+    },
+    "pooled_regular": {
+      "n": 76479,
+      "actual_units": 83375378.7,
+      "mae": 136.2075,
+      "wape": 0.124941,
+      "bias": -0.033292
+    },
+    "stress_test_wape": 0.208572
+  }
+}
+{
+  "coverage": {
+    "p10_p90_interval_coverage": 0.7733,
+    "share_actual_below_p90": 0.8806,
+    "share_actual_below_p10": 0.1073,
+    "target": {
+      "interval": 0.8,
+      "below_p90": 0.9,
+      "below_p10": 0.1
+    }
+  },
+  "system": {
+    "system_point_model": "v3_tweedie",
+    "all_702_series": {
+      "seasonal_naive": {
+        "n": 77922,
+        "actual_units": 84493394.1,
+        "mae": 216.9379,
+        "wape": 0.200066,
+        "bias": -0.021498
+      },
+      "v3_tweedie": {
+        "n": 77922,
+        "actual_units": 84493394.1,
+        "mae": 128.7238,
+        "wape": 0.118712,
+        "bias": -0.021944
+      },
+      "v3_system": {
+        "n": 77922,
+        "actual_units": 84493394.1,
+        "mae": 128.3894,
+        "wape": 0.118404,
+        "bias": -0.020874
+      }
+    },
+    "rows_by_route": {
+      "lightgbm": 76567,
+      "cold_start": 1079,
+      "intermittent": 276
+    },
+    "route_cold_start": {
+      "seasonal_naive": {
+        "n": 1079,
+        "actual_units": 547666.8,
+        "mae": 88.2486,
+        "wape": 0.173865,
+        "bias": 0.036057
+      },
+      "tsb_intermittent": {
+        "n": 1079,
+        "actual_units": 547666.8,
+        "mae": 114.2702,
+        "wape": 0.225132,
+        "bias": -0.074514
+      },
+      "v3_tweedie": {
+        "n": 1079,
+        "actual_units": 547666.8,
+        "mae": 112.3955,
+        "wape": 0.221439,
+        "bias": -0.129018
+      },
+      "v3_system": {
+        "n": 1079,
+        "actual_units": 547666.8,
+        "mae": 88.2486,
+        "wape": 0.173865,
+        "bias": 0.036057
+      }
+    },
+    "route_intermittent": {
+      "seasonal_naive": {
+        "n": 276,
+        "actual_units": 507.0,
+        "mae": 1.8732,
+        "wape": 1.019724,
+        "bias": -0.38856
+      },
+      "tsb_intermittent": {
+        "n": 276,
+        "actual_units": 507.0,
+        "mae": 1.654,
+        "wape": 0.900399,
+        "bias": -0.434274
+      },
+      "v3_tweedie": {
+        "n": 276,
+        "actual_units": 507.0,
+        "mae": 1.6075,
+        "wape": 0.875095,
+        "bias": -0.32211
+      },
+      "v3_system": {
+        "n": 276,
+        "actual_units": 507.0,
+        "mae": 1.6075,
+        "wape": 0.875095,
+        "bias": -0.32211
+      }
+    },
+    "route_lightgbm": {
+      "seasonal_naive": {
+        "n": 76567,
+        "actual_units": 83945220.3,
+        "mae": 219.5266,
+        "wape": 0.200232,
+        "bias": -0.021871
+      },
+      "tsb_intermittent": {
+        "n": 76567,
+        "actual_units": 83945220.3,
+        "mae": 248.794,
+        "wape": 0.226927,
+        "bias": -0.021061
+      },
+      "v3_tweedie": {
+        "n": 76567,
+        "actual_units": 83945220.3,
+        "mae": 129.4121,
+        "wape": 0.118038,
+        "bias": -0.021243
+      },
+      "v3_system": {
+        "n": 76567,
+        "actual_units": 83945220.3,
+        "mae": 129.4121,
+        "wape": 0.118038,
+        "bias": -0.021243
+      }
+    }
+  }
+}

@@ -1,0 +1,513 @@
+
+=== get_forecast_overview({'top_n': 3})
+{
+  "scope": "all stores",
+  "forecast_origin": "2017-08-16",
+  "total_7d_units": {
+    "p10": 4169549.4,
+    "p50": 4884306.6,
+    "p90": 5640167.4
+  },
+  "by_family": [
+    {
+      "family": "GROCERY I",
+      "p10": 1419359.3,
+      "p50": 1655262.7,
+      "p90": 1889614.7
+    },
+    {
+      "family": "BEVERAGES",
+      "p10": 1079114.9,
+      "p50": 1269096.1,
+      "p90": 1485179.8
+    },
+    {
+      "family": "PRODUCE",
+      "p10": 766994.5,
+      "p50": 870000.0,
+      "p90": 985677.1
+    },
+    {
+      "family": "DAIRY",
+      "p10": 275492.3,
+      "p50": 315237.8,
+      "p90": 357154.1
+    },
+    {
+      "family": "BREAD/BAKERY",
+      "p10": 174311.4,
+      "p50": 204836.0,
+      "p90": 237143.2
+    },
+    {
+      "family": "POULTRY",
+      "p10": 117255.8,
+      "p50": 143765.3,
+      "p90": 166782.7
+    },
+    {
+      "family": "MEATS",
+      "p10": 114585.6,
+      "p50": 140172.0,
+      "p90": 167923.3
+    },
+    {
+      "family": "DELI",
+      "p10": 94600.2,
+      "p50": 113017.3,
+      "p90": 131118.5
+    },
+    {
+      "family": "EGGS",
+      "p10": 56231.3,
+      "p50": 73996.4,
+      "p90": 92202.0
+    },
+    {
+      "family": "FROZEN FOODS",
+      "p10": 35832.1,
+      "p50": 47771.5,
+      "p90": 60196.9
+    },
+    {
+      "family": "PREPARED FOODS",
+      "p10": 24809.5,
+      "p50": 33218.0,
+      "p90": 41549.3
+    },
+    {
+      "family": "GROCERY II",
+      "p10": 5996.5,
+      "p50": 10594.9,
+      "p90": 15370.3
+    },
+    {
+      "family": "SEAFOOD",
+      "p10": 4966.0,
+      "p50": 7338.4,
+      "p90": 10255.5
+    }
+  ],
+  "biggest_increases": [
+    {
+      "store_nbr": 51,
+      "family": "POULTRY",
+      "forecast_7d": 8476.0,
+      "last_week": 4968.0,
+      "change_pct": 70.6
+    },
+    {
+      "store_nbr": 19,
+      "family": "GROCERY II",
+      "forecast_7d": 118.5,
+      "last_week": 90.0,
+      "change_pct": 31.7
+    },
+    {
+      "store_nbr": 37,
+      "family": "GROCERY II",
+      "forecast_7d": 347.1,
+      "last_week": 274.0,
+      "change_pct": 26.7
+    }
+  ],
+  "biggest_decreases": [
+    {
+      "store_nbr": 25,
+      "family": "BEVERAGES",
+      "forecast_7d": 12983.3,
+      "last_week": 21329.0,
+      "change_pct": -39.1
+    },
+    {
+      "store_nbr": 25,
+      "family": "SEAFOOD",
+      "forecast_7d": 35.9,
+      "last_week": 59.0,
+      "change_pct": -39.1
+    },
+    {
+      "store_nbr": 25,
+      "family": "FROZEN FOODS",
+      "forecast_7d": 789.6,
+      "last_week": 1280.7,
+      "change_pct": -38.3
+    }
+  ]
+}
+
+=== get_forecast({'store_nbr': 44, 'family': 'DAIRY'})
+{
+  "store_nbr": 44,
+  "family": "DAIRY",
+  "forecast_origin": "2017-08-16",
+  "method": "lightgbm_v3_tweedie",
+  "model_version": "v3.0",
+  "route": "lightgbm",
+  "total_7d": {
+    "p10": 15728.4,
+    "p50": 17332.0,
+    "p90": 19293.8
+  },
+  "daily": [
+    {
+      "date": "2017-08-16",
+      "weekday": "Wed",
+      "onpromotion": 38,
+      "p10": 2141.4,
+      "p50": 2408.9,
+      "p90": 2590.3
+    },
+    {
+      "date": "2017-08-17",
+      "weekday": "Thu",
+      "onpromotion": 19,
+      "p10": 1738.2,
+      "p50": 1905.9,
+      "p90": 2148.7
+    },
+    {
+      "date": "2017-08-18",
+      "weekday": "Fri",
+      "onpromotion": 22,
+      "p10": 2152.4,
+      "p50": 2330.7,
+      "p90": 2732.4
+    },
+    {
+      "date": "2017-08-19",
+      "weekday": "Sat",
+      "onpromotion": 22,
+      "p10": 2685.7,
+      "p50": 3033.5,
+      "p90": 3375.1
+    },
+    {
+      "date": "2017-08-20",
+      "weekday": "Sun",
+      "onpromotion": 22,
+      "p10": 3119.8,
+      "p50": 3504.7,
+      "p90": 3852.1
+    },
+    {
+      "date": "2017-08-21",
+      "weekday": "Mon",
+      "onpromotion": 22,
+      "p10": 2077.9,
+      "p50": 2189.9,
+      "p90": 2396.4
+    },
+    {
+      "date": "2017-08-22",
+      "weekday": "Tue",
+      "onpromotion": 22,
+      "p10": 1813.0,
+      "p50": 1958.5,
+      "p90": 2198.8
+    }
+  ],
+  "note": "p50 = expected demand; there is a ~80% chance demand falls between p10 and p90 (per backtest calibration)."
+}
+
+=== explain_forecast({'store_nbr': 44, 'family': 'DAIRY'})
+{
+  "store_nbr": 44,
+  "family": "DAIRY",
+  "forecast_7d_p50": 17332.0,
+  "typical_series_7d": 1425.4,
+  "top_drivers": [
+    {
+      "feature": "mean_7",
+      "meaning": "last week's average sales",
+      "effect_pct": 137.2
+    },
+    {
+      "feature": "last_sales",
+      "meaning": "latest known day's sales",
+      "effect_pct": 72.7
+    },
+    {
+      "feature": "lag_7",
+      "meaning": "same weekday last week",
+      "effect_pct": 50.2
+    },
+    {
+      "feature": "same_dow_mean_4",
+      "meaning": "same weekday, last 4 weeks",
+      "effect_pct": 18.6
+    },
+    {
+      "feature": "family",
+      "meaning": "product family",
+      "effect_pct": 13.2
+    }
+  ],
+  "context": {
+    "last_week_units": 16266.0,
+    "last_4_weeks_avg_week_units": 17517.0,
+    "planned_promo_items_next_7d": 167,
+    "usual_promo_items_per_day": 20.2,
+    "holiday_days_next_7d": 0
+  },
+  "note": "effect_pct: average % by which each factor multiplies the daily forecast relative to the model's typical series (effects combine multiplicatively)."
+}
+
+=== what_if_promotion({'store_nbr': 44, 'family': 'DAIRY', 'onpromotion': 0})
+{
+  "store_nbr": 44,
+  "family": "DAIRY",
+  "scenario": "0 promoted items on 7 day(s)",
+  "total_7d_p50_before": 17332.0,
+  "total_7d_p50_after": 16941.0,
+  "change_units": -391.0,
+  "change_pct": -2.3,
+  "total_7d_p90_after": 18934.9,
+  "daily": [
+    {
+      "date": "2017-08-16",
+      "onpromotion_before": 38,
+      "onpromotion_after": 0,
+      "p50_before": 2408.9,
+      "p50_after": 2294.9,
+      "p90_after": 2499.9
+    },
+    {
+      "date": "2017-08-17",
+      "onpromotion_before": 19,
+      "onpromotion_after": 0,
+      "p50_before": 1905.9,
+      "p50_after": 1877.7,
+      "p90_after": 2115.8
+    },
+    {
+      "date": "2017-08-18",
+      "onpromotion_before": 22,
+      "onpromotion_after": 0,
+      "p50_before": 2330.7,
+      "p50_after": 2288.4,
+      "p90_after": 2684.2
+    },
+    {
+      "date": "2017-08-19",
+      "onpromotion_before": 22,
+      "onpromotion_after": 0,
+      "p50_before": 3033.5,
+      "p50_after": 2992.5,
+      "p90_after": 3317.1
+    },
+    {
+      "date": "2017-08-20",
+      "onpromotion_before": 22,
+      "onpromotion_after": 0,
+      "p50_before": 3504.7,
+      "p50_after": 3467.6,
+      "p90_after": 3791.8
+    },
+    {
+      "date": "2017-08-21",
+      "onpromotion_before": 22,
+      "onpromotion_after": 0,
+      "p50_before": 2189.9,
+      "p50_after": 2129.5,
+      "p90_after": 2361.8
+    },
+    {
+      "date": "2017-08-22",
+      "onpromotion_before": 22,
+      "onpromotion_after": 0,
+      "p50_before": 1958.5,
+      "p50_after": 1890.3,
+      "p90_after": 2164.3
+    }
+  ],
+  "caveat": "Model-estimated response learned from historical promotions; promotion levels far outside the series' history are extrapolations. Promotion backtest accuracy: see get_model_reliability."
+}
+
+=== what_if_promotion({'store_nbr': 44, 'family': 'DAIRY', 'onpromotion': 60, 'dates': ['2017-08-18', '2017-08-19']})
+{
+  "store_nbr": 44,
+  "family": "DAIRY",
+  "scenario": "60 promoted items on 2 day(s)",
+  "total_7d_p50_before": 17332.0,
+  "total_7d_p50_after": 17548.6,
+  "change_units": 216.6,
+  "change_pct": 1.2,
+  "total_7d_p90_after": 19390.4,
+  "daily": [
+    {
+      "date": "2017-08-16",
+      "onpromotion_before": 38,
+      "onpromotion_after": 38,
+      "p50_before": 2408.9,
+      "p50_after": 2408.9,
+      "p90_after": 2590.3
+    },
+    {
+      "date": "2017-08-17",
+      "onpromotion_before": 19,
+      "onpromotion_after": 19,
+      "p50_before": 1905.9,
+      "p50_after": 1905.9,
+      "p90_after": 2148.7
+    },
+    {
+      "date": "2017-08-18",
+      "onpromotion_before": 22,
+      "onpromotion_after": 60,
+      "p50_before": 2330.7,
+      "p50_after": 2475.9,
+      "p90_after": 2798.9
+    },
+    {
+      "date": "2017-08-19",
+      "onpromotion_before": 22,
+      "onpromotion_after": 60,
+      "p50_before": 3033.5,
+      "p50_after": 3082.8,
+      "p90_after": 3395.5
+    },
+    {
+      "date": "2017-08-20",
+      "onpromotion_before": 22,
+      "onpromotion_after": 22,
+      "p50_before": 3504.7,
+      "p50_after": 3514.8,
+      "p90_after": 3853.3
+    },
+    {
+      "date": "2017-08-21",
+      "onpromotion_before": 22,
+      "onpromotion_after": 22,
+      "p50_before": 2189.9,
+      "p50_after": 2196.2,
+      "p90_after": 2400.7
+    },
+    {
+      "date": "2017-08-22",
+      "onpromotion_before": 22,
+      "onpromotion_after": 22,
+      "p50_before": 1958.5,
+      "p50_after": 1964.1,
+      "p90_after": 2203.1
+    }
+  ],
+  "caveat": "Model-estimated response learned from historical promotions; promotion levels far outside the series' history are extrapolations. Promotion backtest accuracy: see get_model_reliability."
+}
+
+=== get_model_reliability({'family': 'DAIRY'})
+{
+  "model": "v3_tweedie",
+  "how_to_read": "WAPE = total absolute error / total sales (lower is better). Bias > 0 means over-forecast (waste risk), < 0 under-forecast (stock-out risk).",
+  "by_situation": [
+    {
+      "group": "no_promotion",
+      "v3_tweedie_wape_pct": 14.0,
+      "seasonal_naive_wape_pct": 20.9,
+      "v2_recursive_wape_pct": 16.0,
+      "v3_tweedie_bias_pct": 0.6
+    },
+    {
+      "group": "on_promotion",
+      "v3_tweedie_wape_pct": 11.7,
+      "seasonal_naive_wape_pct": 20.0,
+      "v2_recursive_wape_pct": 15.4,
+      "v3_tweedie_bias_pct": -2.3
+    },
+    {
+      "group": "holiday_or_event",
+      "v3_tweedie_wape_pct": 16.8,
+      "seasonal_naive_wape_pct": 28.6,
+      "v2_recursive_wape_pct": 22.9,
+      "v3_tweedie_bias_pct": -7.1
+    },
+    {
+      "group": "normal_day",
+      "v3_tweedie_wape_pct": 11.1,
+      "seasonal_naive_wape_pct": 18.8,
+      "v2_recursive_wape_pct": 14.3,
+      "v3_tweedie_bias_pct": -1.4
+    },
+    {
+      "group": "high",
+      "v3_tweedie_wape_pct": 11.0,
+      "seasonal_naive_wape_pct": 19.1,
+      "v2_recursive_wape_pct": 14.6,
+      "v3_tweedie_bias_pct": -2.1
+    },
+    {
+      "group": "low",
+      "v3_tweedie_wape_pct": 27.5,
+      "seasonal_naive_wape_pct": 39.8,
+      "v2_recursive_wape_pct": 31.7,
+      "v3_tweedie_bias_pct": -5.2
+    },
+    {
+      "group": "mid",
+      "v3_tweedie_wape_pct": 15.5,
+      "seasonal_naive_wape_pct": 24.6,
+      "v2_recursive_wape_pct": 19.4,
+      "v3_tweedie_bias_pct": -1.2
+    }
+  ],
+  "by_horizon_day": [
+    {
+      "group": "1",
+      "v3_tweedie_wape_pct": 10.3,
+      "seasonal_naive_wape_pct": 19.8,
+      "v2_recursive_wape_pct": 14.1,
+      "v3_tweedie_bias_pct": -0.4
+    },
+    {
+      "group": "2",
+      "v3_tweedie_wape_pct": 11.6,
+      "seasonal_naive_wape_pct": 20.3,
+      "v2_recursive_wape_pct": 15.0,
+      "v3_tweedie_bias_pct": -0.3
+    },
+    {
+      "group": "3",
+      "v3_tweedie_wape_pct": 12.7,
+      "seasonal_naive_wape_pct": 18.0,
+      "v2_recursive_wape_pct": 16.2,
+      "v3_tweedie_bias_pct": -2.4
+    },
+    {
+      "group": "4",
+      "v3_tweedie_wape_pct": 11.3,
+      "seasonal_naive_wape_pct": 16.9,
+      "v2_recursive_wape_pct": 14.4,
+      "v3_tweedie_bias_pct": -1.1
+    },
+    {
+      "group": "5",
+      "v3_tweedie_wape_pct": 11.1,
+      "seasonal_naive_wape_pct": 19.6,
+      "v2_recursive_wape_pct": 16.6,
+      "v3_tweedie_bias_pct": -3.0
+    },
+    {
+      "group": "6",
+      "v3_tweedie_wape_pct": 12.8,
+      "seasonal_naive_wape_pct": 21.6,
+      "v2_recursive_wape_pct": 14.8,
+      "v3_tweedie_bias_pct": -2.5
+    },
+    {
+      "group": "7",
+      "v3_tweedie_wape_pct": 13.2,
+      "seasonal_naive_wape_pct": 25.3,
+      "v2_recursive_wape_pct": 16.8,
+      "v3_tweedie_bias_pct": -4.9
+    }
+  ],
+  "by_window": [
+    {
+      "group": "2016-12_christmas",
+      "v3_tweedie_wape_pct": 15.4,
+      "seasonal_naive_wape_pct": 24.5,
+      "v2_recursive_wape_pct": 19.4,
+      "v3_tweedie_bias_pct": -2.2
+    },
+    {
+ 

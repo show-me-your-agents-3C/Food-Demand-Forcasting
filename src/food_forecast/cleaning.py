@@ -29,7 +29,9 @@ def _clean_chunk(chunk: pd.DataFrame) -> pd.DataFrame:
     chunk["sales"] = pd.to_numeric(chunk["sales"], errors="raise").astype("float32")
     if (chunk["sales"] < 0).any():
         raise ValueError("Negative sales found; do not silently alter raw demand values.")
-    chunk["onpromotion"] = chunk["onpromotion"].fillna(False).astype("bool")
+    # Favorita counts how many items of the family are on promotion; keep the
+    # count (promotion intensity) instead of collapsing it to a yes/no flag.
+    chunk["onpromotion"] = pd.to_numeric(chunk["onpromotion"], errors="raise").fillna(0).astype("int32")
     chunk["is_food"] = chunk["family"].isin(FOOD_FAMILIES)
     return chunk
 

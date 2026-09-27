@@ -2,3 +2,6 @@
 .venv/
 __pycache__/
 *.py[cod]
+outputs/model_v3/backtest/
+outputs/model_v3/run*.log
+outputs/model_v3/run_all.sh
