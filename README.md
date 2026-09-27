@@ -19,7 +19,7 @@ python3 -m venv .venv
 
 The chat Agent uses the installed LangGraph cycle and the gateway's text-JSON protocol (not native tool calling). Set `LLM_GATEWAY_URL`, `LLM_GATEWAY_API_KEY`, and `LLM_MODEL` in the environment or a local `.env` file before starting it. The key is sent only as the `X-API-Key` request header. `/clear` clears the current conversation; `/exit` exits. Conversation state is in memory only and is discarded when the process exits.
 
-Known gateway limitation: the latest bounded CLI smoke test reached the configured gateway, but its response was not accepted as a supported JSON protocol message (`invalid_protocol`). The Agent clearly labeled and returned its English template fallback. A successful live LLM answer has not yet been verified; use the fallback label and tool trace to distinguish it from a model-generated answer.
+The Agent sends a bounded JSON-mode request (512 output tokens, 45-second HTTP timeout, one retry) and requires one complete raw JSON protocol object. The protocol reminder precedes the user request; numeric claims, dates, and required historical/simulation disclosures are still validated against tool evidence. In a live CLI check, the gateway returned a valid tool request, the Agent called `get_forecast` against `outputs/final/`, and the final answer passed validation with status `answered`. Earlier `invalid_protocol` responses were caused by Markdown-fenced/extra JSON and a final answer truncated by the former 256-token output cap. A separate minimal probe returned `OK`; all checks used the configured `X-API-Key` header without displaying or logging the key.
 
 ### Data and replenishment Agent
 

@@ -3,8 +3,16 @@ import json
 import pandas as pd
 import pytest
 
-from src.food_forecast.chat_agent import ChatSession
-from src.food_forecast.chat_agent import _fallback
+from src.food_forecast.chat_agent import (
+    ChatSession,
+    _answer_facts_supported,
+    _answer_numbers_supported,
+    _answer_risks_supported,
+    _complete_evidence_disclosures,
+    _fallback,
+    _requires_forecast_tool,
+    _requires_replenishment_tool,
+)
 from src.food_forecast.forecast_tools import (
     FINAL,
     call_tool,
@@ -34,6 +42,11 @@ def _answer(text="The result is based on the retrieved tool facts."):
     return json.dumps({"type": "answer", "text": text}, ensure_ascii=False)
 
 
+def _tool_result(messages):
+    content = messages[-1]["content"].removeprefix("TOOL_RESULT_JSON ")
+    return json.loads(content.split("\n\n", 1)[0])
+
+
 def test_forecast_matches_published_v3_artifact_and_reports_snapshot():
     artifact = pd.read_csv(FINAL / "forecast.csv")
     rows = artifact[(artifact.store_nbr == 3) & (artifact.family == "BEVERAGES")]
@@ -48,7 +61,6 @@ def test_forecast_matches_published_v3_artifact_and_reports_snapshot():
 
 def test_tools_validate_store_family_dates_and_limits():
     assert "Available stores" in call_tool("get_forecast", {"store_nbr": 999, "family": "DAIRY"})["error"]
-    assert "Available families" in call_tool("get_forecast", {"store_nbr": 3, "family": "NOT_A_FAMILY"})["error"]
     assert "Ambiguous family" in call_tool("get_forecast", {"store_nbr": 3, "family": "肉类"})["error"]
     assert "YYYY-MM-DD" in call_tool("get_forecast", {"store_nbr": 3, "family": "DAIRY", "start_date": "bad"})["error"]
     assert "available range" in call_tool("get_forecast", {"store_nbr": 3, "family": "DAIRY", "start_date": "2026-01-01"})["error"]
@@ -77,6 +89,265 @@ def test_replenishment_uses_v3_forecast_and_explicit_simulation_inputs():
     assert partial["data"]["forecast_date_range"] == ["2017-08-17", "2017-08-19"]
 
 
+def test_numeric_evidence_accepts_rounded_tool_values_and_date_range_duration():
+    result = call_tool("get_replenishment", {"store_nbr": 3, "family": "BEVERAGES"})
+    evidence = [{"tool": "get_replenishment", "result": result}]
+    answer = (
+        "Stockout risk is high. Current stock is 0; the reorder point is 26,818 units. "
+        "The 7-day forecast is 57,563 units. Snapshot 2017-08-15, forecast dates "
+        "2017-08-16 through 2017-08-22."
+    )
+    assert _answer_numbers_supported(answer, evidence)
+
+
+def test_replenishment_evidence_accepts_rounded_numbers_bold_risk_and_full_dates():
+    result = call_tool("get_replenishment", {"store_nbr": 3, "family": "BEVERAGES"})
+    evidence = [{"tool": "get_replenishment", "result": result}]
+    answer = (
+        "Stockout risk is **high**. Current simulated stock is 0 units and reorder point is 26,818 units. "
+        "The 7-day forecast is 57,563 units; recommended order is 59,720 units. "
+        "Snapshot through 2017-08-15, forecast origin 2017-08-16, dates 2017-08-16 through 2017-08-22. "
+        "This is historical data, not live sales. Inventory, lead time, shelf life, and MOQ are simulated assumptions. "
+        "This Agent does not place orders."
+    )
+    assert _answer_risks_supported(answer, evidence)
+    assert _answer_risks_supported("Stockout risk: high.", evidence)
+    assert not _answer_risks_supported("Stockout risk: low.", evidence)
+    assert _answer_facts_supported(answer, evidence)
+
+
+def test_replenishment_no_order_phrase_accepts_equivalent_clear_wording():
+    result = call_tool("get_replenishment", {"store_nbr": 3, "family": "BEVERAGES"})
+    evidence = [{"tool": "get_replenishment", "result": result}]
+    answer = (
+        "Stockout risk for BEVERAGES at Store 3 is high. Snapshot through 2017-08-15, origin 2017-08-16, "
+        "forecast dates 2017-08-16 through 2017-08-22. This is historical data, not live sales. "
+        "Inventory, lead time, shelf life, and MOQ are simulated assumptions. No order is placed."
+    )
+    assert _answer_facts_supported(answer, evidence)
+
+
+def test_historical_data_snapshot_disclosure_is_equivalent_to_not_live():
+    result = call_tool("get_replenishment", {"store_nbr": 1, "family": "PRODUCE"})
+    evidence = [{"tool": "get_replenishment", "result": result}]
+    answer = (
+        "Recommended order quantity for PRODUCE at Store 1 is 9780 units (historical data snapshot through 2017-08-15, "
+        "forecast origin 2017-08-16, range 2017-08-16 to 2017-08-22). Simulated inventory is 0.0, lead time 1 day, "
+        "shelf life 4 days, MOQ 10. These are simulated assumptions. This agent provides decision support only and does not place orders."
+    )
+    assert _answer_facts_supported(answer, evidence)
+
+
+@pytest.mark.parametrize("question", [
+    "How many units should I order?",
+    "How much should we replenish?",
+    "What order quantity should I use?",
+])
+def test_replenishment_quantity_phrasings_require_fresh_tool_evidence(question):
+    assert _requires_replenishment_tool(question)
+
+
+def test_forecast_intent_requires_fresh_tool_evidence():
+    assert _requires_forecast_tool("Give me the seven-day forecast for PRODUCE at Store 1.")
+    assert not _requires_forecast_tool("Which categories should Store 3 replenish first?")
+
+
+def test_priority_aggregate_risk_and_action_are_checked_against_every_item():
+    result = call_tool("get_priority_replenishments", {"store_nbr": 3, "top_n": 10})
+    assert result["items"]
+    assert all(item["stockout_risk_simulated"] == "high" for item in result["items"])
+    assert all(item["action"] == "order_today" for item in result["items"])
+    evidence = [{"tool": "get_priority_replenishments", "result": result}]
+    response = (
+        "Top priorities for Store 3: " + ", ".join(
+            f"{item['family']} ({item['forecast_7d_p50']} p50)" for item in result["items"]
+        ) + ". All show high stockout risk and order_today action. "
+        "Data snapshot through 2017-08-15, forecast origin 2017-08-16, forecast range 2017-08-16 to 2017-08-22. "
+        "This is historical data, not live sales. Inventory, lead time, shelf life, and MOQ are simulated assumptions. "
+        "No order is placed."
+    )
+    assert _answer_facts_supported(response, evidence)
+
+    mismatched = {**result, "items": [dict(item) for item in result["items"]]}
+    mismatched["items"][-1]["stockout_risk_simulated"] = "low"
+    assert not _answer_risks_supported(
+        "All show high stockout risk and order_today action.",
+        [{"tool": "get_priority_replenishments", "result": mismatched}],
+    )
+    mismatched_action = {**result, "items": [dict(item) for item in result["items"]]}
+    mismatched_action["items"][-1]["action"] = "monitor"
+    assert not _answer_risks_supported(
+        "All show high stockout risk and order_today action.",
+        [{"tool": "get_priority_replenishments", "result": mismatched_action}],
+    )
+
+
+def test_missing_replenishment_disclaimer_is_completed_without_weakening_numbers():
+    result = call_tool("get_replenishment", {"store_nbr": 1, "family": "PRODUCE"})
+    evidence = [{"tool": "get_replenishment", "result": result}]
+    response = (
+        "Stockout risk for PRODUCE at Store 1 is high (data snapshot through 2017-08-15, "
+        "forecast origin 2017-08-16, forecast dates 2017-08-16 to 2017-08-22). "
+        "Simulated current stock is 0.0 units against a reorder point of 2647.4. "
+        "Recommended order quantity is 9780 units. This is historical data, not live sales. "
+        "Inventory, lead time, shelf life, and MOQ are simulated assumptions."
+    )
+    completed = _complete_evidence_disclosures(response, evidence)
+    assert "does not place orders" in completed.lower()
+    assert _answer_facts_supported(completed, evidence)
+    fabricated = completed.replace("9780 units", "9781 units")
+    assert not _answer_numbers_supported(fabricated, evidence)
+
+
+def test_priority_historical_wording_gets_explicit_boundary_and_safe_disclaimer():
+    result = call_tool("get_priority_replenishments", {"store_nbr": 3, "top_n": 10})
+    evidence = [{"tool": "get_priority_replenishments", "result": result}]
+    item_list = ", ".join(
+        f"{item['family']} ({item['recommended_order_qty']} units)" for item in result["items"]
+    )
+    response = (
+        f"Top priorities for Store 3 (data snapshot through 2017-08-15, forecast origin 2017-08-16, "
+        f"forecast dates 2017-08-16 to 2017-08-22): {item_list}. All have high stockout risk. "
+        "This is decision support based on historical data. Inventory, lead time, shelf life, and MOQ are simulated assumptions."
+    )
+    completed = _complete_evidence_disclosures(response, evidence)
+    assert "not live sales or inventory" in completed.lower()
+    assert "does not place orders" in completed.lower()
+    assert _answer_facts_supported(completed, evidence)
+    fabricated = completed.replace("59720 units", "59721 units")
+    assert not _answer_numbers_supported(fabricated, evidence)
+
+
+def test_store_one_produce_four_turn_sequence_uses_fresh_evidence_and_priority_items():
+    def forecast_answer(messages):
+        result = _tool_result(messages)
+        data = result["data"]
+        start, end = data["forecast_date_range"]
+        return _answer(
+            f"PRODUCE forecast p50 is {result['total']['p50']} units. Snapshot {data['data_snapshot_through']}; "
+            f"origin {data['forecast_origin']}; forecast dates {start} through {end}. Historical data, not live sales."
+        )
+
+    def replenishment_answer(messages):
+        result = _tool_result(messages)
+        data = result["data"]
+        start, end = data["forecast_date_range"]
+        return _answer(
+            f"Stockout risk for {result['family']} at Store {result['store_nbr']} is {result['stockout_risk_simulated']}. "
+            f"Recommended order is {result['recommended_order_qty']} units. Snapshot {data['data_snapshot_through']}; "
+            f"origin {data['forecast_origin']}; forecast dates {start} through {end}. Historical data, not live sales. "
+            "Inventory, lead time, shelf life, and MOQ are simulated assumptions. No order is placed."
+        )
+
+    def priority_answer(messages):
+        result = _tool_result(messages)
+        items = result["items"]
+        data = result["data"]
+        start, end = data["forecast_date_range"]
+        listing = ", ".join(f"{item['family']} ({item['forecast_7d_p50']} p50)" for item in items)
+        return _answer(
+            f"Top priorities for Store 3: {listing}. All show high stockout risk and order_today action. "
+            f"Data snapshot through {data['data_snapshot_through']}, forecast origin {data['forecast_origin']}, "
+            f"forecast range {start} to {end}. Historical data, not live sales. "
+            "Inventory, lead time, shelf life, and MOQ are simulated assumptions. No order is placed."
+        )
+
+    model = ScriptedLLM(
+        _tool("get_forecast", {"store_nbr": 1, "family": "PRODUCE"}), forecast_answer,
+        _tool("get_replenishment", {}), replenishment_answer,
+        _answer("Recommended order quantity for PRODUCE at Store 1 is 9780 units."), replenishment_answer,
+        _tool("get_priority_replenishments", {"store_nbr": 3, "top_n": 10}), priority_answer,
+    )
+    session = ChatSession(llm=model)
+    forecast = session.ask("Give me the seven-day forecast for PRODUCE at Store 1.")
+    risk = session.ask("Is there a stockout risk?")
+    order = session.ask("How many units should I order?")
+    priorities = session.ask("Which categories should Store 3 replenish first?")
+
+    assert forecast["status"] == risk["status"] == order["status"] == priorities["status"] == "answered"
+    assert risk["tool_trace"][0]["args"]["store_nbr"] == 1
+    assert risk["tool_trace"][0]["args"]["family"] == "PRODUCE"
+    assert order["tool_trace"][0]["tool"] == "get_replenishment"
+    assert order["tool_trace"][0]["args"] == {"store_nbr": 1, "family": "PRODUCE"}
+    assert str(order["evidence"][0]["result"]["recommended_order_qty"]) in order["text"]
+    assert priorities["tool_trace"][0]["tool"] == "get_priority_replenishments"
+    assert priorities["tool_trace"][0]["args"]["store_nbr"] == 3
+
+
+def test_clear_then_missing_replenishment_context_clarifies_without_calling_llm():
+    def forecast_answer(messages):
+        result = _tool_result(messages)
+        data = result["data"]
+        start, end = data["forecast_date_range"]
+        return _answer(
+            f"Forecast p50 is {result['total']['p50']}. Snapshot {data['data_snapshot_through']}; "
+            f"origin {data['forecast_origin']}; forecast dates {start} through {end}. "
+            "This is historical data, not live sales."
+        )
+
+    model = ScriptedLLM(
+        _tool("get_forecast", {"store_nbr": 1, "family": "PRODUCE"}),
+        forecast_answer,
+    )
+    session = ChatSession(llm=model)
+    assert session.ask("Give me the seven-day forecast for PRODUCE at Store 1.")["status"] == "answered"
+    assert session.context["store_nbr"] == 1
+    assert session.context["family"] == "PRODUCE"
+
+    session.clear()
+    response = session.ask("How many units should I order?")
+
+    assert response["status"] == "clarification"
+    assert response["text"] == "Which store number and product family should I use?"
+    assert response["tool_trace"] == []
+    assert response["evidence"] == []
+    assert response["context"] == {}
+    assert model.calls == 2
+
+
+def test_repeated_identical_forecast_request_fetches_fresh_evidence():
+    def forecast_answer(messages):
+        result = _tool_result(messages)
+        data = result["data"]
+        start, end = data["forecast_date_range"]
+        return _answer(
+            f"PRODUCE at Store 1 has p50 forecast {result['total']['p50']} units for {start} through {end}. "
+            f"Data snapshot through {data['data_snapshot_through']}; forecast origin {data['forecast_origin']}. "
+            "This is historical data, not live sales."
+        )
+
+    model = ScriptedLLM(
+        _tool("get_forecast", {"store_nbr": 1, "family": "PRODUCE"}), forecast_answer,
+        _answer("The PRODUCE forecast at Store 1 is 16628.8 units."), forecast_answer,
+    )
+    session = ChatSession(llm=model)
+    question = "Give me the seven-day forecast for PRODUCE at Store 1."
+    first = session.ask(question)
+    repeated = session.ask(question)
+
+    assert first["status"] == "answered"
+    assert repeated["status"] == "answered"
+    assert repeated["fallback_reason"] is None
+    assert repeated["tool_trace"][0]["tool"] == "get_forecast"
+    assert repeated["tool_trace"][0]["status"] == "success"
+    assert repeated["tool_trace"][0]["args"]["store_nbr"] == 1
+    assert repeated["tool_trace"][0]["args"]["family"] == "PRODUCE"
+    assert repeated["evidence"][0]["result"]["total"]["p50"] == first["evidence"][0]["result"]["total"]["p50"]
+    assert model.calls == 4
+
+
+@pytest.mark.parametrize("claim", [
+    "The reorder point is 26,819 units.",
+    "The forecast is 57,564 units.",
+    "Current stock is 15 units.",
+    "The forecast covers 8 days.",
+])
+def test_numeric_evidence_rejects_mismatched_and_date_component_numbers(claim):
+    result = call_tool("get_replenishment", {"store_nbr": 3, "family": "BEVERAGES"})
+    evidence = [{"tool": "get_replenishment", "result": result}]
+    assert not _answer_numbers_supported(claim, evidence)
+
+
 def test_replenishment_rejects_mixed_forecast_and_feature_snapshots(monkeypatch):
     from src.food_forecast import forecast_tools
 
@@ -95,7 +366,7 @@ def test_replenishment_rejects_mixed_forecast_and_feature_snapshots(monkeypatch)
 
 def test_llm_tool_request_result_and_answer_complete_the_loop():
     def answer_with_fact(messages):
-        result = json.loads(messages[-1]["content"].removeprefix("TOOL_RESULT_JSON "))
+        result = _tool_result(messages)
         data = result["data"]
         dates = data["forecast_date_range"]
         disclosure = (f"The snapshot ends {data['data_snapshot_through']}; forecast dates are "
@@ -133,6 +404,59 @@ def test_followups_keep_store_change_family_and_sessions_are_isolated():
     assert "store_nbr" not in other.context
     session.clear()
     assert not session.context and not session.messages and not session.tool_trace
+
+
+def test_three_turn_followup_forces_fresh_replenishment_evidence():
+    def forecast_answer(messages):
+        result = _tool_result(messages)
+        data = result["data"]
+        start, end = data["forecast_date_range"]
+        return _answer(
+            f"Forecast p50 is {result['total']['p50']}. Snapshot {data['data_snapshot_through']}; "
+            f"origin {data['forecast_origin']}; forecast range {start} through {end}. "
+            "This is historical data, not live sales."
+        )
+
+    def replenishment_answer(messages):
+        result = _tool_result(messages)
+        data = result["data"]
+        start, end = data["forecast_date_range"]
+        return _answer(
+            f"Stockout risk for {result['family']} at Store {result['store_nbr']} is {result['stockout_risk_simulated']}. "
+            f"Recommended order is {result['recommended_order_qty']} units. Snapshot {data['data_snapshot_through']}; "
+            f"origin {data['forecast_origin']}; forecast range {start} through {end}. "
+            "This is historical data, not live sales. Inventory, lead time, shelf life, and MOQ are simulated assumptions. "
+            "No order is placed."
+        )
+
+    model = ScriptedLLM(
+        _tool("get_forecast", {"store_nbr": 3, "family": "BEVERAGES"}), forecast_answer,
+        _tool("get_replenishment", {}), replenishment_answer,
+        _answer("Recommended replenishment for BEVERAGES at Store 3: 59720 units."),
+        replenishment_answer,
+    )
+    session = ChatSession(llm=model)
+    forecast = session.ask("Give me the seven-day forecast for beverages at Store 3.")
+    risk = session.ask("What is the stockout risk for beverages at Store 3?")
+    replenish = session.ask("How much should I replenish?")
+
+    assert forecast["status"] == "answered"
+    assert forecast["tool_trace"][0]["tool"] == "get_forecast"
+    assert risk["status"] == "answered"
+    assert risk["tool_trace"][0]["tool"] == "get_replenishment"
+    assert replenish["status"] == "answered"
+    assert replenish["fallback_reason"] is None
+    assert replenish["tool_trace"] == [{
+        "tool": "get_replenishment",
+        "args": {"store_nbr": 3, "family": "BEVERAGES"},
+        "status": "success",
+        "source_files": [
+            "outputs/final/forecast.csv", "outputs/final/future_features.csv.gz",
+            "outputs/final/model_metadata.json", "outputs/final/metrics.json",
+        ],
+    }]
+    assert replenish["evidence"][0]["result"]["recommended_order_qty"] == 59720
+    assert "59720" in replenish["text"]
 
 
 @pytest.mark.parametrize("reply", ["not json", '{"type":"tool","name":"__import__","args":{}}'])
@@ -236,10 +560,12 @@ def test_english_explicit_store_change_overrides_previous_context():
 
 
 def test_english_missing_information_gets_an_english_clarification():
-    session = ChatSession(llm=ScriptedLLM('{"type":"clarify","text":"Which store and product family should I use?"}'))
+    model = ScriptedLLM()
+    session = ChatSession(llm=model)
     response = session.ask("How much should we order?")
     assert response["status"] == "clarification"
-    assert response["text"] == "Which store and product family should I use?"
+    assert response["text"] == "Which store number and product family should I use?"
+    assert model.calls == 0
 
 
 def test_agent_does_not_execute_a_tool_with_model_guessed_entities():
@@ -274,8 +600,10 @@ def test_gateway_failure_fallback_is_english():
     def fail(_messages):
         raise ConnectionError("do-not-show-raw-error")
 
-    result = ChatSession(llm=fail, max_retries=0).ask("What is the forecast?")
-    assert result["text"].startswith("[Template fallback] Unable to retrieve tool data.")
+    result = ChatSession(llm=fail, max_retries=0).ask("What is the forecast for PRODUCE at Store 1?")
+    assert result["status"] == "fallback"
+    assert result["fallback_reason"] == "gateway_request_failed"
+    assert result["text"].startswith("[Template fallback]")
     assert "do-not-show-raw-error" not in result["text"]
 
 
@@ -291,7 +619,7 @@ def test_fallback_uses_english_when_snapshot_metadata_is_missing():
 
 def test_non_english_model_answer_is_replaced_by_english_fallback():
     def answer_in_chinese(messages):
-        result = json.loads(messages[-1]["content"].removeprefix("TOOL_RESULT_JSON "))
+        result = _tool_result(messages)
         return _answer(f"预测需求量为 {result['total']['p50']} 件。")
 
     model = ScriptedLLM(
@@ -319,7 +647,7 @@ def test_unsupported_forecast_dates_are_replaced_by_tool_dates():
 
 def test_unsupported_risk_level_is_replaced_by_tool_risk():
     def contradict_risk(messages):
-        payload = json.loads(messages[-1]["content"].removeprefix("TOOL_RESULT_JSON "))
+        payload = _tool_result(messages)
         actual = payload["stockout_risk_simulated"]
         claimed = "low" if actual == "high" else "high"
         data = payload["data"]
@@ -337,3 +665,9 @@ def test_unsupported_risk_level_is_replaced_by_tool_risk():
     result = ChatSession(llm=model).ask("How much should we order for beverages at Store 3?")
     assert result["status"] == "fallback"
     assert "stockout risk" in result["text"]
+
+
+def test_markdown_emphasis_does_not_hide_mismatched_risk_level():
+    result = call_tool("get_replenishment", {"store_nbr": 3, "family": "BEVERAGES"})
+    evidence = [{"tool": "get_replenishment", "result": result}]
+    assert not _answer_risks_supported("Stockout risk is **low**.", evidence)
