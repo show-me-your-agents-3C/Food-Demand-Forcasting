@@ -11,12 +11,12 @@ client = TestClient(app)
 def test_dashboard_assets_and_forecast_data():
     page = client.get('/')
     assert page.status_code == 200
-    assert '需求与补货计划' in page.text
+    assert 'Demand & replenishment plan' in page.text
     assert client.get('/assets/app.js').status_code == 200
     assert client.get('/assets/styles.css').status_code == 200
     rows = client.get('/api/forecast', params={'store_nbr': 1, 'family': 'DAIRY'}).json()
     assert len(rows) == 7
-    assert sum(row['forecast_sales'] for row in rows) == 3961
+    assert round(sum(row['forecast_sales'] for row in rows), 3) == 4509.783
 
 
 @pytest.mark.parametrize('question', [
@@ -39,15 +39,19 @@ def test_unknown_store_is_not_silently_replaced():
 
 
 def test_page_context_and_follow_up_reach_chat_endpoint(monkeypatch):
-    monkeypatch.setattr(agent, 'llm_configured', lambda: False)
-    result = client.post('/api/chat', json={
-        'message': '如果需求增加20%，补货量会怎样变化？',
-        'history': [{'role': 'user', 'content': '当前页面选中：门店 1，品类 DAIRY。'}],
+    # No gateway: the v3 chat agent answers from tools with its template fallback.
+    for name in ('LLM_GATEWAY_URL', 'LLM_GATEWAY_API_KEY', 'LLM_MODEL'):
+        monkeypatch.delenv(name, raising=False)
+    monkeypatch.setattr('src.food_forecast.chat_agent.load_dotenv', lambda *args, **kwargs: None)
+    first = client.post('/api/chat', json={
+        'message': 'How much should we order?', 'session_id': 'page-test', 'store_nbr': 1, 'family': 'DAIRY',
     }).json()
-    simulation = result['tool_trace'][0]['result']['simulation']
-    assert simulation['store_nbr'] == 1
-    assert simulation['family'] == 'DAIRY'
-    assert simulation['simulated_order_qty'] == 4220
+    assert first['mode'] == 'fallback'
+    assert first['tool_trace'][0]['tool'] == 'get_replenishment'
+    assert first['tool_trace'][0]['args'] == {'store_nbr': 1, 'family': 'DAIRY'}
+    assert first['tool_trace'][0]['result']['recommended_order_qty'] == 3860
+    follow_up = client.post('/api/chat', json={'message': 'How much should we order for produce?', 'session_id': 'page-test'}).json()
+    assert follow_up['tool_trace'][0]['args'] == {'store_nbr': 1, 'family': 'PRODUCE'}
 
 
 def test_demand_decrease_and_chinese_horizon():
@@ -67,7 +71,7 @@ def test_percent_does_not_select_a_store():
 def test_metrics_answer_does_not_claim_accuracy():
     result = agent.run_fallback('预测误差是多少？', 'test')
     assert '绝对误差总和' in result['reply']
-    assert '17.42%' in result['reply']
+    assert '11.69%' in result['reply']
 
 
 def test_partial_artifacts_do_not_pass_health_check(tmp_path, monkeypatch):
