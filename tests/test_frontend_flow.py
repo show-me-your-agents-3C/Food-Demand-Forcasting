@@ -85,3 +85,15 @@ def test_placeholder_gateway_is_not_ready(monkeypatch):
     monkeypatch.setenv('LLM_GATEWAY_API_KEY', 'replace-with-your-api-key')
     monkeypatch.setenv('LLM_MODEL', 'replace-with-your-model-name')
     assert not agent.llm_configured()
+
+
+def test_chat_is_rate_limited_per_client(monkeypatch):
+    from src.api import main
+    monkeypatch.setattr(main, 'CHAT_LIMIT', 2)
+    monkeypatch.setattr(main, '_chat_calls', main.defaultdict(main.deque))
+    monkeypatch.setattr(main.ChatSession, 'ask', lambda self, text: {
+        'text': 'ok', 'status': 'answered', 'tool_trace': [], 'evidence': [], 'fallback_reason': None})
+    headers = {'X-Forwarded-For': '203.0.113.9'}
+    codes = [client.post('/api/chat', json={'message': 'hi'}, headers=headers).status_code for _ in range(3)]
+    assert codes == [200, 200, 429]
+    assert client.post('/api/chat', json={'message': 'hi'}, headers={'X-Forwarded-For': '203.0.113.10'}).status_code == 200

@@ -3,11 +3,12 @@
 from __future__ import annotations
 
 import os
-from collections import OrderedDict
+import time
+from collections import OrderedDict, defaultdict, deque
 from pathlib import Path
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -100,10 +101,25 @@ def explanations(
 
 
 _sessions: "OrderedDict[str, ChatSession]" = OrderedDict()
+# The site is public and every chat turn calls the paid LLM gateway: cap turns per client.
+CHAT_LIMIT = int(os.getenv("CHAT_RATE_LIMIT", "30"))
+CHAT_WINDOW_SECONDS = 300
+_chat_calls: "defaultdict[str, deque[float]]" = defaultdict(deque)
+
+
+def _check_rate(client: str) -> None:
+    now, calls = time.monotonic(), _chat_calls[client]
+    while calls and now - calls[0] > CHAT_WINDOW_SECONDS:
+        calls.popleft()
+    if len(calls) >= CHAT_LIMIT:
+        raise HTTPException(status_code=429, detail="Too many questions; please wait a few minutes.")
+    calls.append(now)
 
 
 @app.post("/api/chat", response_model=ChatResponse)
-def chat(request: ChatRequest) -> ChatResponse:
+def chat(request: ChatRequest, http: Request) -> ChatResponse:
+    forwarded = http.headers.get("x-forwarded-for", "")
+    _check_rate(forwarded.split(",")[0].strip() or (http.client.host if http.client else "unknown"))
     # v3 chat agent (src/food_forecast/chat_agent.py); sessions live in memory only.
     session = _sessions.pop(request.session_id, None) if request.session_id else None
     if session is None:
