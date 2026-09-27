@@ -312,8 +312,12 @@ def get_priority_replenishments(store_nbr: int | None = None, top_n: int = 5) ->
     source = _forecast()
     if store_nbr is not None:
         source = source[source["store_nbr"] == store_nbr]
+    low_risk = rows.loc[rows["stockout_risk_simulated"] != "high", "family"].tolist()
     return {
         "scope": "all available stores" if store_nbr is None else f"store {store_nbr}",
+        # Stated explicitly so answers do not over-generalise ("all have high risk").
+        "stockout_risk_summary": f"high for {len(rows) - len(low_risk)} of {len(rows)} items"
+        + (f"; low for {', '.join(low_risk)}" if low_risk else ""),
         "items": rows.to_dict("records"),
         "priority_rule": "high stockout risk first, then other order_today items, then monitor; higher v3 p50 forecast first within each group.",
         "data": _source_facts(source),
