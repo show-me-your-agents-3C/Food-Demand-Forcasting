@@ -1,0 +1,17 @@
+YOUR_DOMAIN.example.com {
+	encode gzip
+
+	handle /api/* {
+		reverse_proxy 127.0.0.1:8000
+	}
+
+	handle /health {
+		reverse_proxy 127.0.0.1:8000
+	}
+
+	handle {
+		root * /home/ubuntu/Food-Demand-Forcasting/frontend
+		try_files {path} /index.html
+		file_server
+	}
+}

@@ -1,9 +1,10 @@
+import os
 from pathlib import Path
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DATA_PATH = PROJECT_ROOT / "data" / "favorita" / "train.csv"
-OUTPUT_DIR = PROJECT_ROOT / "outputs"
+PROJECT_ROOT = Path(os.environ.get("FOOD_FORECAST_ROOT") or Path(__file__).resolve().parents[2])
+DATA_PATH = Path(os.environ.get("FOOD_FORECAST_DATA_PATH") or PROJECT_ROOT / "data" / "favorita" / "train.csv")
+OUTPUT_DIR = Path(os.environ.get("FOOD_FORECAST_OUTPUT_DIR") or PROJECT_ROOT / "outputs")
 
 FOOD_FAMILIES = [
     "BREAD/BAKERY", "BEVERAGES", "DAIRY", "DELI", "EGGS", "FROZEN FOODS",

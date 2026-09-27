@@ -1,5 +1,15 @@
 # FreshFlow: Demand Forecasting & Replenishment Decision Support
 
+## Local dashboard
+
+The Chinese dashboard is available at `/` when running the API. On this Mac,
+double-click `start-local.command`, then open `http://127.0.0.1:8001`.
+See `docs/FRONTEND_HANDOFF.md` for setup, changed files and the demo walkthrough.
+
+The frontend uses the existing forecast and replenishment artifacts. No frontend
+build step or external CDN is required. Without gateway credentials, the chat
+panel visibly uses the scoped rule-based fallback.
+
 FreshFlow is a portfolio-ready prototype for food retail planning. It uses the official Favorita Store Sales data for store-family demand forecasting and transparently simulated operational constraints for replenishment decisions.
 
 ## Current model: v3 (see MODEL_CARD.md)
@@ -127,8 +137,21 @@ An explanation agent must only verbalize `explanation_facts`; it must not invent
 ## Run
 
 ```bash
-cd /home/ubuntu/demand-forecasting
-.venv/bin/python -m src.food_forecast.pipeline
+python -m venv .venv && . .venv/bin/activate
+pip install -r requirements.txt
+python -m src.food_forecast.pipeline
 ```
 
 The first implementation intentionally uses a small, deterministic sample (three stores, eight food families, 120 days) so it runs quickly. Change limits in `src/food_forecast/config.py` as the project grows.
+
+## API service
+
+```bash
+uvicorn src.api.main:app --reload
+```
+
+Endpoints: `GET /health`, `GET /api/scope`, `GET /api/metrics`, `GET /api/summary`, `GET /api/forecast`, `GET /api/replenishment`, `GET /api/explanations`, `POST /api/chat`. Interactive docs at `/docs`.
+
+## Deploy
+
+See `docs/HANDOFF.md` and `deploy/` for the bare-metal Lightsail workflow.
