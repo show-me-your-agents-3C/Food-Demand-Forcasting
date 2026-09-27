@@ -6,15 +6,68 @@ FreshFlow is a portfolio-ready prototype for food retail planning. It uses the o
 
 Direct 7-day LightGBM (Tweedie p50 + quantile p10/p90), retrained and evaluated on
 five historical windows: **11.7% mean WAPE vs 19.9% seasonal naive and 15.3% for v2**.
-Stable outputs for the agent, replenishment rules and dashboard are in `outputs/final/`;
-agent tools (forecast, explain, what-if promotion, reliability) are in
-`src/food_forecast/forecast_tools.py` - see `AGENT_INTEGRATION.md`.
+The v3 Agent reads artifacts from `outputs/final/`; the root-level baseline pipeline and dashboard remain separate. Agent tools (forecast, replenishment, explain, what-if promotion, reliability) are in `src/food_forecast/forecast_tools.py` - see `AGENT_INTEGRATION.md`.
 
 ```bash
-pip install -r requirements-model.txt           # lightgbm, scikit-learn
-python -m src.food_forecast.train_final         # refresh outputs/final/
-python -m src.food_forecast.forecast_tools      # demo every agent tool
-python -m pytest tests -q
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-model.txt
+.venv/bin/python -m src.food_forecast.train_final    # refresh outputs/final/; optional, takes several minutes
+.venv/bin/python -m src.food_forecast.forecast_tools # demo every registered tool
+.venv/bin/python -m src.food_forecast.chat_agent     # English multi-turn replenishment assistant
+.venv/bin/python -m pytest tests -q
+```
+
+The chat Agent uses the installed LangGraph cycle and the gateway's text-JSON protocol (not native tool calling). Set `LLM_GATEWAY_URL`, `LLM_GATEWAY_API_KEY`, and `LLM_MODEL` in the environment or a local `.env` file before starting it. The key is sent only as the `X-API-Key` request header. `/clear` clears the current conversation; `/exit` exits. Conversation state is in memory only and is discarded when the process exits.
+
+Known gateway limitation: the latest bounded CLI smoke test reached the configured gateway, but its response was not accepted as a supported JSON protocol message (`invalid_protocol`). The Agent clearly labeled and returned its English template fallback. A successful live LLM answer has not yet been verified; use the fallback label and tool trace to distinguish it from a model-generated answer.
+
+### Data and replenishment Agent
+
+The Agent reads only the published v3 snapshot in `outputs/final/`; it does not train models during chat. The checked-in snapshot was trained on Favorita data through **2017-08-15**, with forecast origin **2017-08-16** and forecast dates **2017-08-16..2017-08-22**. These are historical dates, not today's sales or live inventory. The artifact metadata identifies the point model as `v3.0:v3_tweedie`; p10 and p90 are separate quantile LightGBM artifacts.
+
+Replenishment is recomputed from those same v3 p50/p90 rows and `future_features.csv.gz` (`mean_7`). Current stock, lead time, shelf life, and MOQ are deterministic assumptions from `src/food_forecast/inventory.py`; no inventory, supplier, cost, or purchase-order feed exists. Safety stock uses the p90-p50 weekly uncertainty buffer scaled by simulated lead time. The priority rule is `order_today` before `monitor`, then higher p50 demand. This is decision support only and never places an order.
+
+The original `python -m src.food_forecast.pipeline` remains a separate seasonal-naive baseline that writes root-level `outputs/forecast.csv` and `outputs/replenishment_plan.csv`. It is not connected to the v3 artifacts; do not join those files into one answer. Refreshing v3 requires the explicit `train_final` command above; chat queries only read existing artifacts.
+
+Install and test the Agent dependencies in the active environment:
+
+```bash
+.venv/bin/python -m pip install -r requirements-model.txt
+.venv/bin/python -m pytest tests -q
+.venv/bin/python -m src.food_forecast.chat_agent
+```
+
+The gateway variables can be exported in the shell or placed in a local, untracked `.env` file:
+
+```bash
+export LLM_GATEWAY_URL="<gateway-base-url>"
+export LLM_GATEWAY_API_KEY="<your-key>"
+export LLM_MODEL="<model-name>"
+.venv/bin/python -m src.food_forecast.chat_agent
+```
+
+Example conversations:
+
+```text
+You> Which categories should Store 3 replenish first?
+You> What is the seven-day forecast for beverages at Store 3?
+You> How much should we order?
+You> Why?
+
+You> What is the seven-day forecast for beverages at Store 3?
+You> What about dairy?
+
+You> How much should we order?
+```
+
+If a required store or family is missing, the assistant asks for it in English. If the LLM gateway is unavailable or returns malformed/unsupported output, the Agent labels its evidence-bound response `[Template fallback]`. Every successful tool call emits a trace with tool name, parameters, status, and source files; it never records the API key.
+
+Example responses from the checked-in artifacts (illustrative output, not live business data):
+
+```text
+FreshFlow [fallback]> Store 3 BEVERAGES forecast for 7 days: p50 57563.2; p10-p90 range 50858.4 to 62574.8. The data snapshot ends 2017-08-15, forecast origin is 2017-08-16, and forecast dates are 2017-08-16 through 2017-08-22. This is historical data, not live inventory or today's actual sales.
+
+FreshFlow [fallback]> Store 3 BEVERAGES: simulated action order today; recommended order 59720 units; simulated stock 0.0; simulated reorder point 26817.8; stockout risk high; waste risk low. Inventory, lead time (3 days), shelf life (180 days), and MOQ (20) are simulated assumptions. This Agent provides recommendations only and does not place orders.
 ```
 
 ## Outputs
@@ -38,22 +91,18 @@ The prototype focuses on food families only: BREAD/BAKERY, BEVERAGES, DAIRY, DEL
 ## Architecture
 
 ```text
-Favorita sales + calendar/promotion signals
-                |
-                v
-          Food-family filter
-                |
-                v
-    Seasonal-naive forecast + backtest
-                |
-                v
-    Inventory scenario + replenishment rules
-                |
-                v
-    CSV / JSON outputs -> dashboard or explanation agent
+Favorita sales + promotion/calendar data
+            |
+            +--> v3 LightGBM artifacts in outputs/final/
+            |        |
+            |        +--> English Agent: forecast + simulated replenishment advice
+            |
+            +--> separate seasonal-naive baseline in outputs/
 ```
 
 ## Pseudocode
+
+The following pseudocode describes the separate baseline pipeline, not the v3 Agent path.
 
 ```python
 history = load_sales(food_families, selected_stores, lookback_days)
@@ -79,7 +128,7 @@ An explanation agent must only verbalize `explanation_facts`; it must not invent
 
 ```bash
 cd /home/ubuntu/demand-forecasting
-/home/ubuntu/archive/food_forecast/.venv/bin/python -m src.food_forecast.pipeline
+.venv/bin/python -m src.food_forecast.pipeline
 ```
 
 The first implementation intentionally uses a small, deterministic sample (three stores, eight food families, 120 days) so it runs quickly. Change limits in `src/food_forecast/config.py` as the project grows.
