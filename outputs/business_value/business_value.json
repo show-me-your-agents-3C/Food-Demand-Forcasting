@@ -1,0 +1,165 @@
+{
+  "scope": {
+    "series": 689,
+    "stores": 53,
+    "calibration_window": "2016-12_christmas",
+    "scored_windows": [
+      "2017-02_carnival",
+      "2017-05_regular",
+      "2017-07_latest"
+    ],
+    "simulated_days": 84,
+    "annualisation_factor": 4.345,
+    "annual_revenue_simulated_usd": 415881083
+  },
+  "best_v3_policy": "LightGBM v3 (p50) + learned buffer",
+  "headline_vs_current_practice": {
+    "from": "Current practice: planner rule + fixed 20% buffer",
+    "to": "LightGBM v3 (p50) + learned buffer",
+    "total_cost_per_year_usd": [
+      4615517,
+      2279368
+    ],
+    "saving_per_year_usd": 2336149,
+    "total_cost_reduction_pct": 50.6,
+    "lost_sales_units_reduction_pct": 23.4,
+    "waste_units_reduction_pct": 81.9,
+    "fill_rate": [
+      0.9908,
+      0.993
+    ],
+    "waste_share_of_delivered": [
+      0.0107,
+      0.0019
+    ]
+  },
+  "fair_comparison_same_learned_buffer_rule": {
+    "from": "Planner rule (avg of last 4 same weekdays) + learned buffer",
+    "to": "LightGBM v3 (p50) + learned buffer",
+    "total_cost_per_year_usd": [
+      2887557,
+      2279368
+    ],
+    "saving_per_year_usd": 608188,
+    "total_cost_reduction_pct": 21.1,
+    "lost_sales_units_reduction_pct": 17.7,
+    "waste_units_reduction_pct": 23.4,
+    "fill_rate": [
+      0.9914,
+      0.993
+    ],
+    "waste_share_of_delivered": [
+      0.0024,
+      0.0019
+    ]
+  },
+  "v2_to_v3": {
+    "from": "LightGBM v2 (recursive) + learned buffer",
+    "to": "LightGBM v3 (p50) + learned buffer",
+    "total_cost_per_year_usd": [
+      2674554,
+      2279368
+    ],
+    "saving_per_year_usd": 395186,
+    "total_cost_reduction_pct": 14.8,
+    "lost_sales_units_reduction_pct": 29.8,
+    "waste_units_reduction_pct": -15.4,
+    "fill_rate": [
+      0.99,
+      0.993
+    ],
+    "waste_share_of_delivered": [
+      0.0016,
+      0.0019
+    ]
+  },
+  "assumptions": {
+    "economics_usd_per_unit": {
+      "PREPARED FOODS": {
+        "cost": 2.2,
+        "price": 3.4,
+        "sellable_days": 1,
+        "delivery_every_days": 1
+      },
+      "BREAD/BAKERY": {
+        "cost": 0.6,
+        "price": 0.95,
+        "sellable_days": 1,
+        "delivery_every_days": 1
+      },
+      "SEAFOOD": {
+        "cost": 4.5,
+        "price": 6.5,
+        "sellable_days": 2,
+        "delivery_every_days": 1
+      },
+      "PRODUCE": {
+        "cost": 1.0,
+        "price": 1.45,
+        "sellable_days": 3,
+        "delivery_every_days": 1
+      },
+      "POULTRY": {
+        "cost": 2.6,
+        "price": 3.6,
+        "sellable_days": 3,
+        "delivery_every_days": 2
+      },
+      "MEATS": {
+        "cost": 3.5,
+        "price": 4.9,
+        "sellable_days": 4,
+        "delivery_every_days": 2
+      },
+      "DELI": {
+        "cost": 2.5,
+        "price": 3.6,
+        "sellable_days": 4,
+        "delivery_every_days": 2
+      },
+      "DAIRY": {
+        "cost": 0.85,
+        "price": 1.2,
+        "sellable_days": 7,
+        "delivery_every_days": 2
+      },
+      "EGGS": {
+        "cost": 2.0,
+        "price": 2.8,
+        "sellable_days": 14,
+        "delivery_every_days": 3
+      },
+      "FROZEN FOODS": {
+        "cost": 2.0,
+        "price": 2.9,
+        "sellable_days": 60,
+        "delivery_every_days": 7
+      },
+      "BEVERAGES": {
+        "cost": 0.7,
+        "price": 1.0,
+        "sellable_days": 120,
+        "delivery_every_days": 7
+      },
+      "GROCERY I": {
+        "cost": 1.1,
+        "price": 1.55,
+        "sellable_days": 120,
+        "delivery_every_days": 7
+      },
+      "GROCERY II": {
+        "cost": 1.8,
+        "price": 2.6,
+        "sellable_days": 120,
+        "delivery_every_days": 7
+      }
+    },
+    "holding_cost": "25% of unit cost per year",
+    "stockout_cost": "lost gross margin (price - cost); no back-orders, no goodwill penalty",
+    "waste_cost": "unit cost of spoiled units",
+    "ordering": "forecasts fixed at the Wednesday origin; deliveries arrive in the morning; FIFO",
+    "start_stock": "zero at each window start (same for all policies)",
+    "buffers": "learned per family from the previous window, identical rule for every method"
+  },
+  "runtime_seconds": 18.2
+}

@@ -61,3 +61,18 @@ result = call_tool("what_if_promotion",
 3. What-if results are model estimates learned from past promotions; state this caveat.
 4. `route` = `cold_start` (new store/line) uses a rule, so it has no explanation or what-if; say why.
    `route` = `intermittent` is model-based but sparse: warn that percentage errors are large.
+
+## Switching the existing backend (`feat/backend-agent-api`, `src/api/`) to v3
+
+The current API reads the old seasonal-naive artifacts in `outputs/`. Minimal changes:
+
+| Current (`src/api`) | Change to |
+|---|---|
+| `service.forecast_frame()` reads `outputs/forecast.csv` (`forecast_sales`, `lower_bound`, `upper_bound`) | read `outputs/final/forecast.csv` (`p50`, `p10`, `p90`, `route`, `onpromotion`) |
+| `service.get_metrics()` reads `outputs/metrics.json` (7-day naive backtest) | `outputs/final/metrics.json` (5-window backtest) |
+| `simulate_promotion(uplift_pct)` multiplies the forecast by a fixed % | `forecast_tools.what_if_promotion(...)` (model re-scores the planned promotion count) |
+| — | add `explain_forecast` and `get_model_reliability` to `TOOL_REGISTRY` |
+| `replenishment_plan.csv` built from the old forecast and a 28-day std | rebuild from `p50`; per-family buffers in `outputs/business_value/learned_settings.csv` (policy `v3_tweedie`, latest window) |
+
+The `outputs/final/` files are small (≈10 MB incl. models), so the "server only reads
+artifacts" rule in `docs/HANDOFF.md` still holds. The what-if tool needs `lightgbm` at runtime.

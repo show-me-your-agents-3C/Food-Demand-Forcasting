@@ -59,3 +59,10 @@ def test_routing_sends_new_series_to_cold_start_and_sparse_ones_to_tsb():
     from src.food_forecast.modeling_v3 import route
     assert list(route([10, 200, 200, 200], [0.0, 0.8, 0.1, 0.8], [1.0, 1.0, 1.0, 0.3])) == [
         "cold_start", "intermittent", "lightgbm", "lightgbm"]  # last: store was closed, not slow demand
+
+
+def test_simulation_counts_lost_sales_and_spoilage():
+    from src.food_forecast.business_value import simulate
+    # Deliver 10 on day 1 only; shelf life 2 days; demand 3 per day for 3 days.
+    result = simulate(np.array([3.0, 3.0, 3.0]), np.array([10.0, 0, 0]), np.array([True, False, False]), shelf=2)
+    assert result["sold"] == 6 and result["wasted"] == 4 and result["lost"] == 3

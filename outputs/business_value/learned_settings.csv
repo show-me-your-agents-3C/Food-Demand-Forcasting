@@ -1,0 +1,196 @@
+family,setting,window,policy
+BEVERAGES,0.5,2017-02_carnival,same_weekday_avg_4w
+BREAD/BAKERY,-0.1,2017-02_carnival,same_weekday_avg_4w
+DAIRY,1.0,2017-02_carnival,same_weekday_avg_4w
+DELI,0.5,2017-02_carnival,same_weekday_avg_4w
+EGGS,0.75,2017-02_carnival,same_weekday_avg_4w
+FROZEN FOODS,1.0,2017-02_carnival,same_weekday_avg_4w
+GROCERY I,1.0,2017-02_carnival,same_weekday_avg_4w
+GROCERY II,1.0,2017-02_carnival,same_weekday_avg_4w
+MEATS,0.2,2017-02_carnival,same_weekday_avg_4w
+POULTRY,0.1,2017-02_carnival,same_weekday_avg_4w
+PREPARED FOODS,0.0,2017-02_carnival,same_weekday_avg_4w
+PRODUCE,0.75,2017-02_carnival,same_weekday_avg_4w
+SEAFOOD,0.2,2017-02_carnival,same_weekday_avg_4w
+BEVERAGES,0.5,2017-05_regular,same_weekday_avg_4w
+BREAD/BAKERY,0.0,2017-05_regular,same_weekday_avg_4w
+DAIRY,0.75,2017-05_regular,same_weekday_avg_4w
+DELI,0.5,2017-05_regular,same_weekday_avg_4w
+EGGS,1.0,2017-05_regular,same_weekday_avg_4w
+FROZEN FOODS,1.0,2017-05_regular,same_weekday_avg_4w
+GROCERY I,0.5,2017-05_regular,same_weekday_avg_4w
+GROCERY II,1.0,2017-05_regular,same_weekday_avg_4w
+MEATS,0.3,2017-05_regular,same_weekday_avg_4w
+POULTRY,0.2,2017-05_regular,same_weekday_avg_4w
+PREPARED FOODS,-0.1,2017-05_regular,same_weekday_avg_4w
+PRODUCE,0.5,2017-05_regular,same_weekday_avg_4w
+SEAFOOD,0.3,2017-05_regular,same_weekday_avg_4w
+BEVERAGES,0.1,2017-07_latest,same_weekday_avg_4w
+BREAD/BAKERY,-0.1,2017-07_latest,same_weekday_avg_4w
+DAIRY,0.5,2017-07_latest,same_weekday_avg_4w
+DELI,0.3,2017-07_latest,same_weekday_avg_4w
+EGGS,0.75,2017-07_latest,same_weekday_avg_4w
+FROZEN FOODS,0.5,2017-07_latest,same_weekday_avg_4w
+GROCERY I,0.3,2017-07_latest,same_weekday_avg_4w
+GROCERY II,1.0,2017-07_latest,same_weekday_avg_4w
+MEATS,0.3,2017-07_latest,same_weekday_avg_4w
+POULTRY,0.1,2017-07_latest,same_weekday_avg_4w
+PREPARED FOODS,-0.1,2017-07_latest,same_weekday_avg_4w
+PRODUCE,0.5,2017-07_latest,same_weekday_avg_4w
+SEAFOOD,0.3,2017-07_latest,same_weekday_avg_4w
+BEVERAGES,0.5,2017-02_carnival,seasonal_naive
+BREAD/BAKERY,-0.1,2017-02_carnival,seasonal_naive
+DAIRY,0.75,2017-02_carnival,seasonal_naive
+DELI,0.3,2017-02_carnival,seasonal_naive
+EGGS,0.75,2017-02_carnival,seasonal_naive
+FROZEN FOODS,1.0,2017-02_carnival,seasonal_naive
+GROCERY I,0.75,2017-02_carnival,seasonal_naive
+GROCERY II,1.0,2017-02_carnival,seasonal_naive
+MEATS,0.2,2017-02_carnival,seasonal_naive
+POULTRY,0.1,2017-02_carnival,seasonal_naive
+PREPARED FOODS,-0.1,2017-02_carnival,seasonal_naive
+PRODUCE,0.75,2017-02_carnival,seasonal_naive
+SEAFOOD,0.2,2017-02_carnival,seasonal_naive
+BEVERAGES,0.5,2017-05_regular,seasonal_naive
+BREAD/BAKERY,-0.1,2017-05_regular,seasonal_naive
+DAIRY,0.75,2017-05_regular,seasonal_naive
+DELI,0.5,2017-05_regular,seasonal_naive
+EGGS,0.75,2017-05_regular,seasonal_naive
+FROZEN FOODS,1.0,2017-05_regular,seasonal_naive
+GROCERY I,0.5,2017-05_regular,seasonal_naive
+GROCERY II,1.0,2017-05_regular,seasonal_naive
+MEATS,0.2,2017-05_regular,seasonal_naive
+POULTRY,0.1,2017-05_regular,seasonal_naive
+PREPARED FOODS,-0.1,2017-05_regular,seasonal_naive
+PRODUCE,0.5,2017-05_regular,seasonal_naive
+SEAFOOD,0.2,2017-05_regular,seasonal_naive
+BEVERAGES,0.2,2017-07_latest,seasonal_naive
+BREAD/BAKERY,-0.1,2017-07_latest,seasonal_naive
+DAIRY,0.3,2017-07_latest,seasonal_naive
+DELI,0.2,2017-07_latest,seasonal_naive
+EGGS,1.0,2017-07_latest,seasonal_naive
+FROZEN FOODS,0.5,2017-07_latest,seasonal_naive
+GROCERY I,0.3,2017-07_latest,seasonal_naive
+GROCERY II,1.0,2017-07_latest,seasonal_naive
+MEATS,0.3,2017-07_latest,seasonal_naive
+POULTRY,0.1,2017-07_latest,seasonal_naive
+PREPARED FOODS,-0.1,2017-07_latest,seasonal_naive
+PRODUCE,0.5,2017-07_latest,seasonal_naive
+SEAFOOD,0.2,2017-07_latest,seasonal_naive
+BEVERAGES,0.3,2017-02_carnival,v2_recursive
+BREAD/BAKERY,-0.1,2017-02_carnival,v2_recursive
+DAIRY,1.0,2017-02_carnival,v2_recursive
+DELI,0.3,2017-02_carnival,v2_recursive
+EGGS,1.0,2017-02_carnival,v2_recursive
+FROZEN FOODS,1.0,2017-02_carnival,v2_recursive
+GROCERY I,0.75,2017-02_carnival,v2_recursive
+GROCERY II,1.0,2017-02_carnival,v2_recursive
+MEATS,0.2,2017-02_carnival,v2_recursive
+POULTRY,0.1,2017-02_carnival,v2_recursive
+PREPARED FOODS,-0.1,2017-02_carnival,v2_recursive
+PRODUCE,0.75,2017-02_carnival,v2_recursive
+SEAFOOD,0.2,2017-02_carnival,v2_recursive
+BEVERAGES,0.5,2017-05_regular,v2_recursive
+BREAD/BAKERY,0.0,2017-05_regular,v2_recursive
+DAIRY,0.75,2017-05_regular,v2_recursive
+DELI,0.5,2017-05_regular,v2_recursive
+EGGS,1.0,2017-05_regular,v2_recursive
+FROZEN FOODS,1.0,2017-05_regular,v2_recursive
+GROCERY I,0.5,2017-05_regular,v2_recursive
+GROCERY II,0.75,2017-05_regular,v2_recursive
+MEATS,0.3,2017-05_regular,v2_recursive
+POULTRY,0.2,2017-05_regular,v2_recursive
+PREPARED FOODS,-0.1,2017-05_regular,v2_recursive
+PRODUCE,0.75,2017-05_regular,v2_recursive
+SEAFOOD,0.3,2017-05_regular,v2_recursive
+BEVERAGES,0.2,2017-07_latest,v2_recursive
+BREAD/BAKERY,-0.1,2017-07_latest,v2_recursive
+DAIRY,0.5,2017-07_latest,v2_recursive
+DELI,0.3,2017-07_latest,v2_recursive
+EGGS,0.75,2017-07_latest,v2_recursive
+FROZEN FOODS,0.5,2017-07_latest,v2_recursive
+GROCERY I,0.5,2017-07_latest,v2_recursive
+GROCERY II,1.0,2017-07_latest,v2_recursive
+MEATS,0.3,2017-07_latest,v2_recursive
+POULTRY,0.2,2017-07_latest,v2_recursive
+PREPARED FOODS,-0.1,2017-07_latest,v2_recursive
+PRODUCE,0.5,2017-07_latest,v2_recursive
+SEAFOOD,0.3,2017-07_latest,v2_recursive
+BEVERAGES,0.2,2017-02_carnival,v3_tweedie
+BREAD/BAKERY,-0.1,2017-02_carnival,v3_tweedie
+DAIRY,0.75,2017-02_carnival,v3_tweedie
+DELI,0.2,2017-02_carnival,v3_tweedie
+EGGS,0.5,2017-02_carnival,v3_tweedie
+FROZEN FOODS,1.0,2017-02_carnival,v3_tweedie
+GROCERY I,0.5,2017-02_carnival,v3_tweedie
+GROCERY II,1.0,2017-02_carnival,v3_tweedie
+MEATS,0.1,2017-02_carnival,v3_tweedie
+POULTRY,0.1,2017-02_carnival,v3_tweedie
+PREPARED FOODS,-0.1,2017-02_carnival,v3_tweedie
+PRODUCE,0.75,2017-02_carnival,v3_tweedie
+SEAFOOD,0.2,2017-02_carnival,v3_tweedie
+BEVERAGES,0.5,2017-05_regular,v3_tweedie
+BREAD/BAKERY,0.0,2017-05_regular,v3_tweedie
+DAIRY,0.5,2017-05_regular,v3_tweedie
+DELI,0.3,2017-05_regular,v3_tweedie
+EGGS,0.75,2017-05_regular,v3_tweedie
+FROZEN FOODS,1.0,2017-05_regular,v3_tweedie
+GROCERY I,0.3,2017-05_regular,v3_tweedie
+GROCERY II,0.75,2017-05_regular,v3_tweedie
+MEATS,0.3,2017-05_regular,v3_tweedie
+POULTRY,0.2,2017-05_regular,v3_tweedie
+PREPARED FOODS,-0.1,2017-05_regular,v3_tweedie
+PRODUCE,0.5,2017-05_regular,v3_tweedie
+SEAFOOD,0.3,2017-05_regular,v3_tweedie
+BEVERAGES,0.2,2017-07_latest,v3_tweedie
+BREAD/BAKERY,0.0,2017-07_latest,v3_tweedie
+DAIRY,0.3,2017-07_latest,v3_tweedie
+DELI,0.3,2017-07_latest,v3_tweedie
+EGGS,0.5,2017-07_latest,v3_tweedie
+FROZEN FOODS,0.5,2017-07_latest,v3_tweedie
+GROCERY I,0.3,2017-07_latest,v3_tweedie
+GROCERY II,1.0,2017-07_latest,v3_tweedie
+MEATS,0.3,2017-07_latest,v3_tweedie
+POULTRY,0.2,2017-07_latest,v3_tweedie
+PREPARED FOODS,-0.1,2017-07_latest,v3_tweedie
+PRODUCE,0.5,2017-07_latest,v3_tweedie
+SEAFOOD,0.3,2017-07_latest,v3_tweedie
+BEVERAGES,3.0,2017-02_carnival,v3_quantile
+BREAD/BAKERY,0.0,2017-02_carnival,v3_quantile
+DAIRY,4.0,2017-02_carnival,v3_quantile
+DELI,2.0,2017-02_carnival,v3_quantile
+EGGS,2.0,2017-02_carnival,v3_quantile
+FROZEN FOODS,4.0,2017-02_carnival,v3_quantile
+GROCERY I,4.0,2017-02_carnival,v3_quantile
+GROCERY II,4.0,2017-02_carnival,v3_quantile
+MEATS,1.0,2017-02_carnival,v3_quantile
+POULTRY,0.5,2017-02_carnival,v3_quantile
+PREPARED FOODS,0.0,2017-02_carnival,v3_quantile
+PRODUCE,4.0,2017-02_carnival,v3_quantile
+SEAFOOD,0.5,2017-02_carnival,v3_quantile
+BEVERAGES,4.0,2017-05_regular,v3_quantile
+BREAD/BAKERY,0.0,2017-05_regular,v3_quantile
+DAIRY,3.0,2017-05_regular,v3_quantile
+DELI,3.0,2017-05_regular,v3_quantile
+EGGS,4.0,2017-05_regular,v3_quantile
+FROZEN FOODS,4.0,2017-05_regular,v3_quantile
+GROCERY I,4.0,2017-05_regular,v3_quantile
+GROCERY II,3.0,2017-05_regular,v3_quantile
+MEATS,1.5,2017-05_regular,v3_quantile
+POULTRY,1.5,2017-05_regular,v3_quantile
+PREPARED FOODS,0.0,2017-05_regular,v3_quantile
+PRODUCE,2.5,2017-05_regular,v3_quantile
+SEAFOOD,1.0,2017-05_regular,v3_quantile
+BEVERAGES,3.0,2017-07_latest,v3_quantile
+BREAD/BAKERY,0.0,2017-07_latest,v3_quantile
+DAIRY,2.5,2017-07_latest,v3_quantile
+DELI,2.5,2017-07_latest,v3_quantile
+EGGS,3.0,2017-07_latest,v3_quantile
+FROZEN FOODS,4.0,2017-07_latest,v3_quantile
+GROCERY I,4.0,2017-07_latest,v3_quantile
+GROCERY II,4.0,2017-07_latest,v3_quantile
+MEATS,2.5,2017-07_latest,v3_quantile
+POULTRY,1.0,2017-07_latest,v3_quantile
+PREPARED FOODS,0.0,2017-07_latest,v3_quantile
+PRODUCE,3.0,2017-07_latest,v3_quantile
+SEAFOOD,1.0,2017-07_latest,v3_quantile

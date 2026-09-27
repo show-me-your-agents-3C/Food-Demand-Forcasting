@@ -80,3 +80,9 @@ python -m src.food_forecast.backtest_v3 --part report
 python -m src.food_forecast.train_final                 # ~4 min -> outputs/final/
 python -m pytest tests -q
 ```
+
+## Business value
+
+See `BUSINESS_VALUE.md`: replaying the backtest through the same replenishment process,
+v3 with learned buffers costs **$2.28M/yr vs $4.62M/yr for current practice (−51%)**, and
+21% less than the planner rule under the same buffer policy.
