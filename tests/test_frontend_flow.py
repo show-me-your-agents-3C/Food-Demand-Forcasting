@@ -49,7 +49,7 @@ def test_page_context_and_follow_up_reach_chat_endpoint(monkeypatch):
     assert first['mode'] == 'fallback'
     assert first['tool_trace'][0]['tool'] == 'get_replenishment'
     assert first['tool_trace'][0]['args'] == {'store_nbr': 1, 'family': 'DAIRY'}
-    assert first['tool_trace'][0]['result']['recommended_order_qty'] == 3860
+    assert first['tool_trace'][0]['result']['recommended_order_qty'] == 1440
     follow_up = client.post('/api/chat', json={'message': 'How much should we order for produce?', 'session_id': 'page-test'}).json()
     assert follow_up['tool_trace'][0]['args'] == {'store_nbr': 1, 'family': 'PRODUCE'}
 

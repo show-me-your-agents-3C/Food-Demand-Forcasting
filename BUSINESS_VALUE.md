@@ -45,6 +45,10 @@ The quantile (p10/p90) policy was tested and was **not** better than p50 + learn
 buffer (the 80% band is slightly narrow, see MODEL_CARD). We keep p50 + learned buffer
 for replenishment and use p10/p90 for communicating risk.
 
+The agent and dashboard use this same policy for the live week: `get_replenishment` orders up to the
+p50 demand of the next delivery cycle x (1 + buffer), with per-family buffers from
+`outputs/business_value/production_buffers.csv` (best setting in the latest window, 2017-07).
+
 ## Assumptions (Favorita has no prices or stock)
 
 | Family | Cost | Price | Sellable days | Delivery every |

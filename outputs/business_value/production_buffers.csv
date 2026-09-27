@@ -1,0 +1,14 @@
+family,buffer,learned_on
+BEVERAGES,0.3,2017-07_latest
+BREAD/BAKERY,-0.1,2017-07_latest
+DAIRY,0.5,2017-07_latest
+DELI,0.3,2017-07_latest
+EGGS,0.75,2017-07_latest
+FROZEN FOODS,0.5,2017-07_latest
+GROCERY I,0.2,2017-07_latest
+GROCERY II,1.0,2017-07_latest
+MEATS,0.3,2017-07_latest
+POULTRY,0.1,2017-07_latest
+PREPARED FOODS,-0.1,2017-07_latest
+PRODUCE,0.5,2017-07_latest
+SEAFOOD,0.3,2017-07_latest

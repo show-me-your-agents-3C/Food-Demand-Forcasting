@@ -22,6 +22,7 @@ import pandas as pd
 
 from .config import PROJECT_ROOT
 from .features_v3 import CATEGORICAL, FEATURES
+from .business_value import ECONOMICS
 from .inventory import DEFAULT_SCENARIO, SCENARIOS, _round_up
 
 
@@ -204,6 +205,12 @@ def get_forecast(store_nbr: int, family: str, start_date: str | None = None, end
     }
 
 
+@lru_cache(maxsize=1)
+def _production_buffers() -> dict[str, float]:
+    path = PROJECT_ROOT / "outputs" / "business_value" / "production_buffers.csv"
+    return pd.read_csv(path).set_index("family")["buffer"].to_dict()
+
+
 def _replenishment_rows(
     store_nbr: int | None = None,
     family: str | None = None,
@@ -238,38 +245,45 @@ def _replenishment_rows(
         forecast_7d_p50=("p50", "sum"), forecast_7d_p90=("p90", "sum"),
         forecast_origin=("forecast_origin", "first"), start_date=("date", "min"), end_date=("date", "max"),
     ).merge(anchor, on=["store_nbr", "family"], how="left", validate="one_to_one")
+    # Same policy as the business-value backtest: order up to the p50 demand of the next
+    # delivery cycle x (1 + buffer learned per family in the latest backtest window).
+    buffers = _production_buffers()
     records = []
     for row in rows.to_dict("records"):
         scenario = SCENARIOS.get(row["family"], DEFAULT_SCENARIO)
-        days = (pd.Timestamp(row["end_date"]) - pd.Timestamp(row["start_date"])).days + 1
-        daily = row["forecast_7d_p50"] / days
-        uncertainty_buffer = max(0.0, row["forecast_7d_p90"] - row["forecast_7d_p50"])
-        safety_stock = uncertainty_buffer * min(scenario["lead_time_days"] / 7, 1)
+        _, _, sellable_days, interval = ECONOMICS[row["family"]]
+        item_forecast = forecast[(forecast["store_nbr"] == row["store_nbr"]) & (forecast["family"] == row["family"])].sort_values("date")
+        daily_p50 = item_forecast["p50"].to_numpy(float)
+        cover_demand = float(daily_p50[:interval].sum())
+        buffer = float(buffers.get(row["family"], 0.0))
+        order_up_to = cover_demand * (1 + buffer)
         current_stock = max(0.0, float(row["mean_7"]) * 1.5)
-        reorder_point = daily * scenario["lead_time_days"] + safety_stock
-        sellable_before_expiry = daily * min(scenario["shelf_life_days"], days)
-        desired_stock = min(row["forecast_7d_p50"] + safety_stock, sellable_before_expiry + safety_stock)
-        order_qty = _round_up(max(0.0, desired_stock - current_stock), scenario["moq"])
+        order_qty = _round_up(max(0.0, order_up_to - current_stock), scenario["moq"])
+        sellable_demand = float(daily_p50[:sellable_days].sum())
         post_order_stock = current_stock + order_qty
-        stockout_risk = "high" if current_stock < reorder_point else "low"
-        waste_risk = "high" if post_order_stock > sellable_before_expiry * 1.15 else "low"
-        item_forecast = forecast[(forecast["store_nbr"] == row["store_nbr"]) & (forecast["family"] == row["family"])]
+        stockout_risk = "high" if current_stock < cover_demand else "low"
+        # Only products that expire inside the forecast week can be judged for waste here.
+        expires_in_week = sellable_days < len(daily_p50)
+        waste_risk = "high" if expires_in_week and post_order_stock > sellable_demand * 1.15 else "low"
+        safety_stock, reorder_point = order_up_to - cover_demand, cover_demand
         records.append({
             "store_nbr": int(row["store_nbr"]), "family": row["family"],
             "forecast_7d_p50": _r(row["forecast_7d_p50"]), "forecast_7d_p90": _r(row["forecast_7d_p90"]),
             "current_stock_simulated": _r(current_stock), "safety_stock_simulated": _r(safety_stock),
             "reorder_point_simulated": _r(reorder_point), "recommended_order_qty": int(order_qty),
             "stockout_risk_simulated": stockout_risk, "waste_risk_simulated": waste_risk,
-            "action": "order_today" if stockout_risk == "high" else "monitor",
+            "action": "order_today" if order_qty > 0 else "monitor",
             "lead_time_days_simulated": scenario["lead_time_days"],
-            "shelf_life_days_simulated": scenario["shelf_life_days"], "moq_simulated": scenario["moq"],
+            "shelf_life_days_simulated": sellable_days, "moq_simulated": scenario["moq"],
+            "delivery_every_days_simulated": interval, "buffer_pct_learned": _r(buffer * 100),
             "data": _source_facts(item_forecast, [
                 "outputs/final/forecast.csv", "outputs/final/future_features.csv.gz",
                 "outputs/final/model_metadata.json", "outputs/final/metrics.json",
             ]),
         })
     result = pd.DataFrame(records)
-    result["priority_rank"] = result["action"].map({"order_today": 0, "monitor": 1})
+    # Urgency first: stock-out risk before other orders, monitor last.
+    result["priority_rank"] = (result["stockout_risk_simulated"] != "high").astype(int) + (result["action"] == "monitor").astype(int)
     return result.sort_values(["priority_rank", "forecast_7d_p50"], ascending=[True, False]).drop(columns="priority_rank")
 
 
@@ -301,7 +315,7 @@ def get_priority_replenishments(store_nbr: int | None = None, top_n: int = 5) ->
     return {
         "scope": "all available stores" if store_nbr is None else f"store {store_nbr}",
         "items": rows.to_dict("records"),
-        "priority_rule": "order_today before monitor; within each action, higher v3 p50 forecast first.",
+        "priority_rule": "high stockout risk first, then other order_today items, then monitor; higher v3 p50 forecast first within each group.",
         "data": _source_facts(source),
     }
 

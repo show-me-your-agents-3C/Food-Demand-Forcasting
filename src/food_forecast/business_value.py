@@ -199,6 +199,11 @@ def main() -> None:
     scenarios["LightGBM v3 p10/p50/p90 + learned safety factor"] = chosen
     settings.append(picks.assign(policy="v3_quantile"))
     pd.concat(settings).to_csv(OUT / "learned_settings.csv", index=False)
+    # Buffers for the live forecast week: per family, the v3 setting that cost least in the latest window.
+    latest = frame[(frame["policy"] == "v3_tweedie") & (frame["window"] == WINDOW_ORDER[-1])]
+    latest = latest.groupby(["family", "setting"])["total_cost_usd"].sum().reset_index()
+    latest.loc[latest.groupby("family")["total_cost_usd"].idxmin(), ["family", "setting"]].rename(
+        columns={"setting": "buffer"}).assign(learned_on=WINDOW_ORDER[-1]).to_csv(OUT / "production_buffers.csv", index=False)
 
     comparison = pd.DataFrame([summarize(part.assign(scenario=name), ["scenario"]).iloc[0] for name, part in scenarios.items()])
     for column in ["lost_margin_usd", "waste_cost_usd", "holding_cost_usd", "total_cost_usd", "revenue_usd"]:
