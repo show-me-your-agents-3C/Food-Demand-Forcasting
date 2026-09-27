@@ -24,6 +24,10 @@ REQUEST_TIMEOUT_SECONDS = 45.0
 MAX_RESPONSE_TOKENS = 512
 MAX_RETRIES = 1
 NUMBER_PATTERN = re.compile(r"(?<![A-Za-z])\d[\d,]*(?:\.\d+)?%?")
+LIST_MARKER_PATTERN = re.compile(r"(?:(?<=^)|(?<=[\s:;]))\d{1,2}\)\s|(?m:^)\s*\d{1,2}\.\s")
+# Typographic characters the model often emits; mapped to ASCII before validation.
+ASCII_EQUIVALENTS = str.maketrans({"\u2013": "-", "\u2014": "-", "\u2212": "-", "\u2018": "'", "\u2019": "'",
+                                   "\u201c": '"', "\u201d": '"', "\u2026": "...", "\u00a0": " ", "\u2248": "~"})
 ISO_DATE_PATTERN = re.compile(r"(?<!\d)\d{4}-\d{2}-\d{2}(?!\d)")
 PROTOCOL_REMINDER = (
     "Return exactly one raw JSON object matching the required protocol. "
@@ -161,6 +165,9 @@ def _number_forms(value: str) -> set[str]:
     if number != number.to_integral_value():
         rounded = number.quantize(Decimal("1"), rounding=ROUND_HALF_UP)
         forms.add(_normalize_number(str(rounded)))
+    if number < 0:
+        # "-391" in a tool result is naturally written as "391 fewer units".
+        forms |= _number_forms(str(-number))
     return forms
 
 
@@ -201,7 +208,7 @@ def _derived_numeric_evidence(value: Any) -> set[str]:
 
 def _answer_numbers_supported(text: str, evidence: list[dict[str, Any]]) -> bool:
     allowed = _numbers(evidence) | _derived_numeric_evidence(evidence)
-    without_dates = ISO_DATE_PATTERN.sub(" ", text)
+    without_dates = LIST_MARKER_PATTERN.sub(" ", ISO_DATE_PATTERN.sub(" ", text))
     return all(_normalize_number(token) in allowed for token in NUMBER_PATTERN.findall(without_dates))
 
 
@@ -252,6 +259,18 @@ def _answer_risks_supported(text: str, evidence: list[dict[str, Any]]) -> bool:
         )
         for match in risk_pattern.finditer(text)
     ]
+    # "BEVERAGES (high stockout risk)" / "all flagged with high stockout risk": the
+    # claim applies to the nearest family/store named just before it, else to every record.
+    for match in re.finditer(rf"\b{emphasis}(?P<level>high|low){emphasis}\s+(?P<kind>stock[\s-]?out|waste)\s+risk\b", text, re.IGNORECASE):
+        before = text[max(0, match.start() - 60):match.start()]
+        families = re.findall(family_pattern, before) if known_families else []
+        stores = re.findall(r"\bStore\s+(\d+)", before, re.IGNORECASE)
+        claims.append((
+            "stockout" if re.sub(r"[^a-z]", "", match.group("kind").lower()) == "stockout" else "waste",
+            match.group("level").lower(),
+            int(stores[-1]) if stores else None,
+            families[-1] if families else None,
+        ))
     aggregate_claims = [
         ("stockout" if re.sub(r"[^a-z]", "", risk_kind.lower()) == "stockout" else "waste", level.lower())
         for level, risk_kind in re.findall(
@@ -302,6 +321,19 @@ def _answer_facts_supported(text: str, evidence: list[dict[str, Any]]) -> bool:
         and _answer_risks_supported(text, evidence)
         and _required_disclosures_present(text, evidence)
     )
+
+
+def _unsupported_reason(text: str, evidence: list[dict[str, Any]]) -> str:
+    """Name the first validation that rejected an answer (for traces and debugging)."""
+    if not text.isascii():
+        return "non_english_answer"
+    if not _answer_numbers_supported(text, evidence):
+        return "unsupported_numeric_claim"
+    if not all(found in _evidence_dates(evidence) for found in ISO_DATE_PATTERN.findall(text)):
+        return "unsupported_date_claim"
+    if not _answer_risks_supported(text, evidence):
+        return "unsupported_risk_claim"
+    return "missing_required_disclosure"
 
 
 def _complete_evidence_disclosures(text: str, evidence: list[dict[str, Any]]) -> str:
@@ -395,12 +427,26 @@ def _fallback(tool_name: str | None, result: dict[str, Any] | None, reason: str 
         note += " Inventory, lead time, shelf life, and MOQ are simulated assumptions."
     elif tool_name == "explain_forecast":
         drivers = result.get("top_drivers", [])
+        context = result.get("context", {})
         text = f"Model explanation for Store {result.get('store_nbr')} {result.get('family')}: "
+        if context:
+            text += (f"7-day forecast {result.get('forecast_7d_p50')} units vs {context.get('last_week_units')} last week "
+                     f"and a {context.get('last_4_weeks_avg_week_units')} weekly average over the last 4 weeks; "
+                     f"{context.get('planned_promo_items_next_7d')} planned promotion item-days; "
+                     f"{context.get('holiday_days_next_7d')} holiday days. Main drivers: ")
         if drivers:
-            text += "; ".join(f"{item['meaning']}: {item.get('effect_pct', item.get('effect_units_7d'))}" for item in drivers)
+            text += "; ".join(
+                f"{item['meaning']} ({item['effect_pct']}% effect)" if "effect_pct" in item
+                else f"{item['meaning']} ({item.get('effect_units_7d')} units)"
+                for item in drivers
+            )
         else:
             text += result.get("explanation", "The tool returned no explainable features.")
         note = f"{note} This is a v3 model feature-contribution explanation, not a causal claim."
+    elif tool_name == "what_if_promotion":
+        text = (f"What-if for Store {result['store_nbr']} {result['family']} ({result['scenario']}): 7-day p50 demand "
+                f"{result['total_7d_p50_before']} -> {result['total_7d_p50_after']} units "
+                f"({result['change_units']} units, {result['change_pct']}%). This is a model estimate, not a measured effect. ")
     else:
         text = "Tool results are available in the evidence fields. "
     suffix = " This Agent provides recommendations only and does not place orders." if "replenishment" in (tool_name or "") else ""
@@ -649,7 +695,7 @@ class ChatSession:
         evidence = state.get("evidence", [])
         trace = state.get("trace", [])
         candidate_answer = (
-            _complete_evidence_disclosures(protocol["text"], evidence)
+            _complete_evidence_disclosures(protocol["text"].translate(ASCII_EQUIVALENTS), evidence)
             if protocol and protocol["type"] == "answer"
             else ""
         )
@@ -663,7 +709,7 @@ class ChatSession:
             if state.get("llm_failed"):
                 reason = "gateway_timeout" if self.last_gateway_error_type and "timeout" in self.last_gateway_error_type.lower() else "gateway_request_failed"
             elif protocol and protocol.get("type") == "answer":
-                reason = "unsupported_numeric_claim"
+                reason = _unsupported_reason(candidate_answer, evidence)
             else:
                 reason = "invalid_protocol"
             answer = _fallback(self.latest_tool_name, self.latest_result, reason)

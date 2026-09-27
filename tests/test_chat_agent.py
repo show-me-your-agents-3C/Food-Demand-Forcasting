@@ -4,6 +4,7 @@ import pandas as pd
 import pytest
 
 from src.food_forecast.chat_agent import (
+    ASCII_EQUIVALENTS,
     ChatSession,
     _answer_facts_supported,
     _answer_numbers_supported,
@@ -671,3 +672,19 @@ def test_markdown_emphasis_does_not_hide_mismatched_risk_level():
     result = call_tool("get_replenishment", {"store_nbr": 3, "family": "BEVERAGES"})
     evidence = [{"tool": "get_replenishment", "result": result}]
     assert not _answer_risks_supported("Stockout risk is **low**.", evidence)
+
+def test_live_phrasings_are_accepted_but_fabrications_still_rejected():
+    priority = call_tool("get_priority_replenishments", {"store_nbr": 3, "top_n": 3})
+    evidence = [{"tool": "get_priority_replenishments", "result": priority}]
+    listed = "Store 3 first: 1) BEVERAGES (high stockout risk, order 48700 units), 2) GROCERY I (order 47100 units)."
+    assert _answer_numbers_supported(listed, evidence)
+    assert _answer_risks_supported(listed, evidence)
+    assert not _answer_risks_supported(listed.replace("high stockout", "low stockout"), evidence)
+    assert not _answer_numbers_supported(listed.replace("48700", "48900"), evidence)
+
+    what_if = call_tool("what_if_promotion", {"store_nbr": 44, "family": "DAIRY", "onpromotion": 0})
+    evidence = [{"tool": "what_if_promotion", "result": what_if}]
+    drop = f"Demand falls by {abs(what_if['change_units'])} units ({abs(what_if['change_pct'])}%)."
+    assert _answer_numbers_supported(drop, evidence)
+    assert not _answer_numbers_supported(drop.replace(str(abs(what_if["change_units"])), "999"), evidence)
+    assert "p50 17332.0 – 17548.6".translate(ASCII_EQUIVALENTS).isascii()

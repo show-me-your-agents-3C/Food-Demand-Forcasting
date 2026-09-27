@@ -471,7 +471,7 @@ def what_if_promotion(store_nbr: int, family: str, onpromotion: int, dates: list
     before, after = _predict(base), _predict(scenario)
     daily = [
         {"date": d.strftime("%Y-%m-%d"), "onpromotion_before": int(b0), "onpromotion_after": int(a0),
-         "p50_before": _r(b), "p50_after": _r(a), "p90_after": _r(c)}
+         "p50_before": _r(b), "p50_after": _r(a), "change_units": _r(a - b), "p90_after": _r(c)}
         for d, b0, a0, b, a, c in zip(base["date"], base["onpromotion"], scenario["onpromotion"], before["p50"], after["p50"], after["p90"])
     ]
     total_before, total_after = before["p50"].sum(), after["p50"].sum()
