@@ -231,6 +231,9 @@ def _replenishment_rows(
     if not forecast_keys.issubset(feature_keys):
         raise ValueError("Forecast rows and future_features.csv.gz have inconsistent store/family/date keys")
     anchor = features[features["horizon_day"] == 1][["store_nbr", "family", "mean_7"]].copy()
+    # Feature keys are categorical strings; align with forecast.csv before merging.
+    anchor["store_nbr"] = anchor["store_nbr"].astype(int)
+    anchor["family"] = anchor["family"].astype(str)
     rows = forecast.groupby(["store_nbr", "family"], as_index=False).agg(
         forecast_7d_p50=("p50", "sum"), forecast_7d_p90=("p90", "sum"),
         forecast_origin=("forecast_origin", "first"), start_date=("date", "min"), end_date=("date", "max"),

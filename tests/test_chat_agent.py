@@ -104,8 +104,8 @@ def test_replenishment_evidence_accepts_rounded_numbers_bold_risk_and_full_dates
     result = call_tool("get_replenishment", {"store_nbr": 3, "family": "BEVERAGES"})
     evidence = [{"tool": "get_replenishment", "result": result}]
     answer = (
-        "Stockout risk is **high**. Current simulated stock is 0 units and reorder point is 26,818 units. "
-        "The 7-day forecast is 57,563 units; recommended order is 59,720 units. "
+        "Stockout risk is **high**. Current simulated stock is 11,021 units and reorder point is 26,818 units. "
+        "The 7-day forecast is 57,563 units; recommended order is 48,700 units. "
         "Snapshot through 2017-08-15, forecast origin 2017-08-16, dates 2017-08-16 through 2017-08-22. "
         "This is historical data, not live sales. Inventory, lead time, shelf life, and MOQ are simulated assumptions. "
         "This Agent does not place orders."
@@ -131,8 +131,8 @@ def test_historical_data_snapshot_disclosure_is_equivalent_to_not_live():
     result = call_tool("get_replenishment", {"store_nbr": 1, "family": "PRODUCE"})
     evidence = [{"tool": "get_replenishment", "result": result}]
     answer = (
-        "Recommended order quantity for PRODUCE at Store 1 is 9780 units (historical data snapshot through 2017-08-15, "
-        "forecast origin 2017-08-16, range 2017-08-16 to 2017-08-22). Simulated inventory is 0.0, lead time 1 day, "
+        "Recommended order quantity for PRODUCE at Store 1 is 6600 units (historical data snapshot through 2017-08-15, "
+        "forecast origin 2017-08-16, range 2017-08-16 to 2017-08-22). Simulated inventory is 3178.6, lead time 1 day, "
         "shelf life 4 days, MOQ 10. These are simulated assumptions. This agent provides decision support only and does not place orders."
     )
     assert _answer_facts_supported(answer, evidence)
@@ -186,16 +186,16 @@ def test_missing_replenishment_disclaimer_is_completed_without_weakening_numbers
     result = call_tool("get_replenishment", {"store_nbr": 1, "family": "PRODUCE"})
     evidence = [{"tool": "get_replenishment", "result": result}]
     response = (
-        "Stockout risk for PRODUCE at Store 1 is high (data snapshot through 2017-08-15, "
+        "Stockout risk for PRODUCE at Store 1 is low (data snapshot through 2017-08-15, "
         "forecast origin 2017-08-16, forecast dates 2017-08-16 to 2017-08-22). "
-        "Simulated current stock is 0.0 units against a reorder point of 2647.4. "
-        "Recommended order quantity is 9780 units. This is historical data, not live sales. "
+        "Simulated current stock is 3178.6 units against a reorder point of 2647.4. "
+        "Recommended order quantity is 6600 units. This is historical data, not live sales. "
         "Inventory, lead time, shelf life, and MOQ are simulated assumptions."
     )
     completed = _complete_evidence_disclosures(response, evidence)
     assert "does not place orders" in completed.lower()
     assert _answer_facts_supported(completed, evidence)
-    fabricated = completed.replace("9780 units", "9781 units")
+    fabricated = completed.replace("6600 units", "6601 units")
     assert not _answer_numbers_supported(fabricated, evidence)
 
 
@@ -214,7 +214,7 @@ def test_priority_historical_wording_gets_explicit_boundary_and_safe_disclaimer(
     assert "not live sales or inventory" in completed.lower()
     assert "does not place orders" in completed.lower()
     assert _answer_facts_supported(completed, evidence)
-    fabricated = completed.replace("59720 units", "59721 units")
+    fabricated = completed.replace("48700 units", "48701 units")
     assert not _answer_numbers_supported(fabricated, evidence)
 
 
@@ -432,7 +432,7 @@ def test_three_turn_followup_forces_fresh_replenishment_evidence():
     model = ScriptedLLM(
         _tool("get_forecast", {"store_nbr": 3, "family": "BEVERAGES"}), forecast_answer,
         _tool("get_replenishment", {}), replenishment_answer,
-        _answer("Recommended replenishment for BEVERAGES at Store 3: 59720 units."),
+        _answer("Recommended replenishment for BEVERAGES at Store 3: 48700 units."),
         replenishment_answer,
     )
     session = ChatSession(llm=model)
@@ -455,8 +455,8 @@ def test_three_turn_followup_forces_fresh_replenishment_evidence():
             "outputs/final/model_metadata.json", "outputs/final/metrics.json",
         ],
     }]
-    assert replenish["evidence"][0]["result"]["recommended_order_qty"] == 59720
-    assert "59720" in replenish["text"]
+    assert replenish["evidence"][0]["result"]["recommended_order_qty"] == 48700
+    assert "48700" in replenish["text"]
 
 
 @pytest.mark.parametrize("reply", ["not json", '{"type":"tool","name":"__import__","args":{}}'])
