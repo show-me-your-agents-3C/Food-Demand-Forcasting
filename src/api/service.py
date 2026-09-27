@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import math
+from functools import lru_cache
 from pathlib import Path
 
 import pandas as pd
@@ -42,15 +43,29 @@ def _records(frame: pd.DataFrame) -> list[dict]:
 
 
 def forecast_frame() -> pd.DataFrame:
-    frame = pd.read_csv(output_dir() / "forecast.csv", parse_dates=["date"])
+    # v3 artifacts; legacy column names kept so existing clients keep working.
+    frame = pd.read_csv(output_dir() / "final" / "forecast.csv", parse_dates=["date"])
+    frame["forecast_sales"], frame["lower_bound"], frame["upper_bound"] = frame["p50"], frame["p10"], frame["p90"]
     return frame.sort_values(["store_nbr", "family", "date"]).reset_index(drop=True)
 
 
+@lru_cache(maxsize=1)
+def _v3_plan() -> pd.DataFrame:
+    from src.food_forecast.forecast_tools import _replenishment_rows
+
+    frame = _replenishment_rows().drop(columns="data").rename(columns={
+        "forecast_7d_p50": "forecast_7d", "safety_stock_simulated": "safety_stock",
+        "reorder_point_simulated": "reorder_point", "stockout_risk_simulated": "stockout_risk",
+        "waste_risk_simulated": "waste_risk", "lead_time_days_simulated": "lead_time_days",
+        "shelf_life_days_simulated": "shelf_life_days", "moq_simulated": "moq",
+    })
+    frame["forecast_daily"] = frame["forecast_7d"] / 7
+    frame["assumption_note"] = "Inventory, shelf-life, lead-time and MOQ are deterministic demo scenarios."
+    return frame.reset_index(drop=True)
+
+
 def plan_frame() -> pd.DataFrame:
-    frame = pd.read_csv(output_dir() / "replenishment_plan.csv")
-    frame["_priority"] = frame["action"].map({"order_today": 0, "monitor": 1}).fillna(2)
-    frame = frame.sort_values(["_priority", "forecast_7d"], ascending=[True, False])
-    return frame.drop(columns="_priority").reset_index(drop=True)
+    return _v3_plan().copy()
 
 
 def get_scope() -> dict:
@@ -62,7 +77,10 @@ def get_scope() -> dict:
 
 
 def get_metrics() -> dict:
-    return _read_json("metrics.json")
+    metrics = _read_json("final/metrics.json")
+    primary = metrics["primary_model"]
+    pooled = metrics["backtest"]["headline"][primary]["pooled_regular"]
+    return {"mae": pooled["mae"], "wape": metrics["headline_mean_wape_regular_windows"][primary], "n_predictions": pooled["n"]}
 
 
 def get_summary() -> dict:

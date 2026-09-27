@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+from collections import OrderedDict
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -14,6 +15,7 @@ from fastapi.staticfiles import StaticFiles
 load_dotenv()
 
 from src.api import agent, service
+from src.food_forecast.chat_agent import ChatSession
 from src.api.schemas import ChatRequest, ChatResponse, HealthResponse, MetricsResponse, ScopeResponse
 
 app = FastAPI(
@@ -97,10 +99,35 @@ def explanations(
     return service.get_explanations(store_nbr=store_nbr, family=family)
 
 
+_sessions: "OrderedDict[str, ChatSession]" = OrderedDict()
+
+
 @app.post("/api/chat", response_model=ChatResponse)
 def chat(request: ChatRequest) -> ChatResponse:
-    result = agent.run_agent(request.message, [turn.model_dump() for turn in request.history])
-    return ChatResponse(**result)
+    # v3 chat agent (src/food_forecast/chat_agent.py); sessions live in memory only.
+    session = _sessions.pop(request.session_id, None) if request.session_id else None
+    if session is None:
+        session = ChatSession()
+        if request.store_nbr is not None:
+            session.context["store_nbr"] = request.store_nbr
+        if request.family:
+            session.context["family"] = request.family
+    if request.session_id:
+        _sessions[request.session_id] = session
+        while len(_sessions) > 200:
+            _sessions.popitem(last=False)
+    result = session.ask(request.message)
+    evidence = iter(result["evidence"])
+    trace = []
+    for entry in result["tool_trace"]:
+        facts = next(evidence)["result"] if entry["status"] == "success" else {"error": "tool call failed"}
+        trace.append({"tool": entry["tool"], "args": entry["args"],
+                      "result": {"source": ", ".join(entry["source_files"]), **facts}})
+    return ChatResponse(
+        reply=result["text"], tool_trace=trace,
+        mode="llm" if result["status"] in ("answered", "clarification") else "fallback",
+        fallback_reason=result["fallback_reason"],
+    )
 
 
 _frontend = Path(__file__).resolve().parents[2] / "frontend"
